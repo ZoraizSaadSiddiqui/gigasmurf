@@ -1,0 +1,1224 @@
+/* ============================================
+   GIGASMURF - Global CSS Variables & Base Styles
+   Colors from design system:
+   #A023EC - Primary Purple
+   #260B4A - Dark Purple
+   #11072D - Deep Dark
+   #D4D4D4 - Light Gray
+   #CFC2D6 - Soft Lavender
+   #1A0B2E - Dark BG
+   #ffffff - White
+   #FF383C - Red/Alert
+   Fonts: Manrope (headings), Poppins (body)
+============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #A023EC;
+  --primary-dark: #7B1DB5;
+  --dark-purple: #260B4A;
+  --deep-dark: #11072D;
+  --bg-dark: #1A0B2E;
+  --bg-card: #1E0F35;
+  --bg-card2: #160A28;
+  --light-gray: #D4D4D4;
+  --soft-lavender: #CFC2D6;
+  --white: #ffffff;
+  --red: #FF383C;
+  --text-muted-light: rgba(255,255,255,0.6);
+  --text-muted: rgba(255,255,255,0.4);
+  --border-purple: rgba(160,35,236,0.3);
+  --gradient-hero: linear-gradient(135deg, #11072D 0%, #1A0B2E 40%, #260B4A 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--deep-dark);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Manrope', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ============ NAVBAR ============ */
+.navbar-gigasmurf {
+  background: transparent;
+  padding: 16px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.navbar-gigasmurf .logo {
+  font-family: 'Manrope', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.navbar-gigasmurf .logo span {
+  color: var(--primary);
+}
+
+.navbar-gigasmurf .nav-link-item {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  padding: 0 16px;
+  transition: color 0.2s;
+}
+
+.navbar-gigasmurf .nav-link-item:hover {
+  color: var(--primary);
+}
+
+.btn-sell {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 8px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-sell:hover {
+  background: var(--primary-dark);
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: rgba(255,255,255,0.8);
+}
+
+.nav-icons svg {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* ============ HERO SECTION ============ */
+.hero-section {
+  background: var(--gradient-hero);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(160,35,236,0.18) 0%, transparent 60%),
+              radial-gradient(ellipse at 20% 80%, rgba(38,11,74,0.5) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-characters {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70%;
+  background: url('https://i.imgur.com/placeholder.png') center bottom no-repeat;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-top: 80px;
+}
+
+/* Search Bar */
+.search-wrapper {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  padding: 14px 24px;
+  max-width: 580px;
+  margin: 0 auto 20px;
+  backdrop-filter: blur(10px);
+}
+
+.search-wrapper input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  margin-left: 10px;
+}
+
+.search-wrapper input::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+.search-icon {
+  color: rgba(255,255,255,0.5);
+  font-size: 16px;
+}
+
+/* Popular Tags */
+.popular-tags {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.popular-tags .tag-label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  font-family: 'Poppins', sans-serif;
+}
+
+.popular-tags .tag {
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.popular-tags .tag:hover {
+  color: var(--primary);
+}
+
+/* Toggle Buttons */
+.hero-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.toggle-btn {
+  border-radius: 50px;
+  padding: 12px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+  border: none;
+}
+
+.toggle-btn.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+.toggle-btn.inactive {
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.toggle-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Category Pills */
+.category-pills {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.cat-pill {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  color: rgba(255,255,255,0.8);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  backdrop-filter: blur(8px);
+}
+
+.cat-pill:hover {
+  background: rgba(160,35,236,0.2);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.cat-pill .cat-icon {
+  font-size: 16px;
+}
+
+/* ============ LIVE MARKETPLACE ============ */
+.section-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title span {
+  color: var(--primary);
+  font-style: italic;
+}
+
+.marketplace-section {
+  background: var(--deep-dark);
+  padding: 70px 0;
+}
+
+.market-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 24px;
+  height: 100%;
+}
+
+.market-card .card-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2ECC71;
+  display: inline-block;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.market-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.market-item:last-child {
+  border-bottom: none;
+}
+
+.market-item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.market-item-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.item-icon-valorant { background: rgba(255,70,84,0.2); }
+.item-icon-lol { background: rgba(200,170,50,0.2); }
+.item-icon-brawl { background: rgba(160,35,236,0.2); }
+.item-icon-fortnite { background: rgba(0,150,255,0.2); }
+
+.market-item-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.market-item-time {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  font-family: 'Poppins', sans-serif;
+}
+
+.market-item-sold {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  font-family: 'Poppins', sans-serif;
+}
+
+.market-item-price {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  font-family: 'Manrope', sans-serif;
+}
+
+/* Flash Deal */
+.flash-deal-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 24px;
+  height: 100%;
+}
+
+.flash-deal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.flash-badge {
+  background: #2ECC71;
+  color: #000;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 50px;
+}
+
+.flash-deal-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #2A0F4A, #A023EC);
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+}
+
+.flash-deal-text {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 12px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.flash-deal-text span {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.countdown {
+  background: rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.countdown svg {
+  color: var(--primary);
+}
+
+.btn-grab {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s;
+}
+
+.btn-grab:hover {
+  background: var(--primary-dark);
+}
+
+/* ============ FEATURED ACCOUNTS ============ */
+.featured-section {
+  background: var(--deep-dark);
+  padding: 60px 0;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.section-header-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.section-header-title span {
+  color: var(--primary);
+}
+
+.see-all-link {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.carousel-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: transparent;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.carousel-btn.active-btn, .carousel-btn:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+/* Account Card */
+.account-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.account-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(160,35,236,0.4);
+}
+
+.account-card-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.account-card-img-placeholder {
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(135deg, #1A0B2E, #260B4A);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.promoted-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50px;
+  font-size: 10px;
+  padding: 3px 10px;
+  color: rgba(255,255,255,0.8);
+  font-family: 'Poppins', sans-serif;
+}
+
+.heart-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.account-card-body {
+  padding: 12px 14px;
+}
+
+.account-card-name {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.account-card-desc {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 10px;
+}
+
+.account-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.seller-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  font-family: 'Poppins', sans-serif;
+}
+
+.verified-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2ECC71;
+  display: inline-block;
+}
+
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.7);
+  font-family: 'Poppins', sans-serif;
+}
+
+.star-rating .star {
+  color: #F5C518;
+}
+
+.account-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.price-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  font-family: 'Poppins', sans-serif;
+}
+
+.price-value {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.btn-buy {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 7px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s;
+}
+
+.btn-buy:hover {
+  background: var(--primary-dark);
+}
+
+/* ============ POPULAR GAMING ACCOUNTS ============ */
+.popular-section {
+  background: var(--deep-dark);
+  padding: 60px 0;
+}
+
+.game-card-large {
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  height: 200px;
+}
+
+.game-card-large img,
+.game-card-large .game-img-placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.game-card-large .game-img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+}
+
+.game-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+
+.game-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.game-arrow-btn {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* ============ TOP RATED BOOSTING ============ */
+.boosting-section {
+  background: linear-gradient(180deg, var(--deep-dark) 0%, #0D0420 100%);
+  padding: 70px 0;
+}
+
+.boosting-search-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.boosting-search {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  width: 360px;
+}
+
+.boosting-search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  margin-left: 8px;
+}
+
+.boosting-search input::placeholder {
+  color: rgba(255,255,255,0.35);
+}
+
+.filter-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Boosting Card */
+.boosting-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.boosting-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(160,35,236,0.4);
+}
+
+.boosting-card-img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+}
+
+.boosting-card-img-placeholder {
+  width: 100%;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.boosting-card-body {
+  padding: 12px;
+}
+
+.boosting-card-name {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.boosting-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.boosting-meta-item {
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  font-family: 'Poppins', sans-serif;
+}
+
+.boosting-meta-val {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-see-all {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: #fff;
+  border-radius: 50px;
+  padding: 12px 32px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 36px auto 0;
+  transition: all 0.2s;
+}
+
+.btn-see-all:hover {
+  background: var(--primary);
+}
+
+/* ============ TOP VERIFIED SELLER ============ */
+.seller-section {
+  background: #0D0420;
+  padding: 70px 0;
+}
+
+.seller-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.seller-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  min-width: 180px;
+  transition: all 0.3s;
+}
+
+.seller-card.featured {
+  background: rgba(160,35,236,0.15);
+  border-color: var(--primary);
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+.seller-avatar {
+  width: 100px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin: 0 auto 12px;
+  display: block;
+  background: linear-gradient(135deg, #1A0B2E, #A023EC);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.seller-name {
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.seller-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  gap: 8px;
+}
+
+.seller-stat {
+  text-align: center;
+}
+
+.seller-stat-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  font-family: 'Poppins', sans-serif;
+}
+
+.seller-stat-val {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  font-family: 'Manrope', sans-serif;
+}
+
+.top-badge {
+  background: var(--primary);
+  color: #fff;
+  font-size: 9px;
+  padding: 2px 8px;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.carousel-nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.carousel-nav-btn:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+/* ============ CTA SECTION ============ */
+.cta-section {
+  background: #0D0420;
+  padding: 60px 0;
+}
+
+.cta-box {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 60px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(160,35,236,0.2) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.cta-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.cta-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  font-family: 'Poppins', sans-serif;
+  max-width: 480px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-cta-primary {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-cta-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-cta-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50px;
+  padding: 14px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-cta-secondary:hover {
+  border-color: #fff;
+}
+
+/* ============ FOOTER ============ */
+.footer-section {
+  background: #0D0420;
+  padding: 50px 0 30px;
+}
+
+.footer-inner {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.footer-logo {
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.footer-logo span {
+  color: var(--primary);
+}
+
+.footer-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  max-width: 200px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 10px;
+}
+
+.social-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  transition: all 0.2s;
+}
+
+.social-btn:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.footer-col-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 24px;
+  margin-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Decorative stars */
+.deco-star {
+  position: absolute;
+  color: rgba(255,255,255,0.3);
+  font-size: 16px;
+  pointer-events: none;
+}
+
+/* Sparkle */
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--primary);
+  opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title { font-size: 24px; }
+  .hero-toggle { flex-direction: column; align-items: center; }
+  .cta-title { font-size: 24px; }
+  .footer-inner { padding: 24px; }
+  .seller-card { min-width: 140px; }
+}
