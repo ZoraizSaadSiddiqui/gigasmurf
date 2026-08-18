@@ -802,3 +802,108 @@ a {
   border-bottom-width: 2px;
   box-sizing: border-box;
 }
+
+/* Marketplace cards: shared Figma glass surface for all three cards. */
+.live-activity-cards-row .market-widget-card {
+  border-width: 2px 0;
+  border-style: solid;
+  border-color: #a023ec;
+  box-shadow: none;
+  background: linear-gradient(
+    160.61deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 101.7%
+  );
+  backdrop-filter: blur(28.64761734008789px);
+  -webkit-backdrop-filter: blur(28.64761734008789px);
+}
+
+/* Figma desktop layout: Bootstrap's flex helpers still control alignment. */
+.live-activity-section {
+  width: min(1230px, 100%);
+}
+
+.live-activity-cards-row {
+  height: 411px;
+  gap: 24px !important;
+}
+
+.live-market-card,
+.live-market-card {
+  flex: 0 0 448px;
+  width: 448px;
+  height: 411px;
+  max-width: 448px;
+}
+
+.live-market-card--flash {
+  flex: 0 0 285px;
+  width: 285px;
+  height: 406px;
+  max-width: 448px;
+}
+
+.live-market-card--flash .market-widget-card {
+  width: 285px;
+  max-width: 448px;
+  height: 406px;
+  padding: 24px;
+}
+
+.flash-deal-card {
+  justify-content: space-between;
+}
+
+.flash-deal-card__header {
+  width: 100%;
+}
+
+.flash-deal-card__content {
+  gap: 12px;
+}
+
+.flash-deal-card__image,
+.flash-deal-image {
+  width: 106px;
+  height: 100px;
+}
+
+.flash-deal-card__image {
+  overflow: visible;
+}
+
+.flash-deal-card__description {
+  max-width: 237px;
+  color: rgba(255, 255, 255, .6);
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+}
+
+.flash-deal-card__description span {
+  color: #fff;
+  font-weight: 600;
+}
+
+.flash-deal-timer {
+  margin: 0 auto;
+  color: #8529ff;
+}
+
+.flash-deal-card__button {
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 20px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 1230px) {
+  .live-activity-section { width: min(1230px, 100%); }
+  .live-activity-cards-row { height: auto; flex-wrap: wrap; }
+  .live-market-card,
+  .live-market-card--flash { flex: 1 1 min(448px, 100%); width: auto; }
+  .live-market-card--flash .market-widget-card { width: 100%; max-width: none; }
+}
