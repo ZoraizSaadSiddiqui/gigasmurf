@@ -8,15 +8,15 @@ const popularGames: GameData[] = [
 
 export default function PopularGamingAccounts() {
   return (
-    <section className="popular-section">
+    <section className="py-5 bg-deep-dark">
       <div className="container">
-        <div className="section-header">
-          <div className="section-header-title">
-            Popular Gaming <span>Accounts</span>
-          </div>
-          <div className="carousel-nav">
-            <button className="carousel-btn">‹</button>
-            <button className="carousel-btn active-btn">›</button>
+        <div className="d-flex align-items-center justify-content-between mb-4">
+          <h3 className="font-heading text-white fw-bold fs-3 mb-0">
+            Popular Gaming <span className="text-purple">Accounts</span>
+          </h3>
+          <div className="d-flex gap-2">
+            <button className="btn btn-outline-light rounded-circle p-0 d-flex align-items-center justify-content-center" style={{ width: 32, height: 32, fontSize: 12 }}>‹</button>
+            <button className="btn btn-purple rounded-circle p-0 d-flex align-items-center justify-content-center" style={{ width: 32, height: 32, fontSize: 12 }}>›</button>
           </div>
         </div>
 

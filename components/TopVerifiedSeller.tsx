@@ -8,21 +8,23 @@ const sellers: SellerData[] = [
 
 export default function TopVerifiedSeller() {
   return (
-    <section className="seller-section">
-      <div className="container">
-        <h2 className="section-title" style={{ marginBottom: '8px' }}>Top Verified <span>Seller</span></h2>
-        <p style={{ textAlign: 'center', color: 'rgba(255,255,255,0.5)', fontSize: '14px', fontFamily: 'Poppins, sans-serif', marginBottom: '40px' }}>
+    <section className="py-5" style={{ backgroundColor: '#0D0420' }}>
+      <div className="container text-center">
+        <h2 className="font-heading text-white fw-bold fs-2 mb-2">
+          Top Verified <span className="text-purple">Seller</span>
+        </h2>
+        <p className="text-white-50 small mb-5">
           Buy with confidence from our highest-rated community members.
         </p>
 
-        <div className="seller-carousel">
-          <button className="carousel-nav-btn">‹</button>
+        <div className="d-flex align-items-center justify-content-center gap-3 overflow-hidden">
+          <button className="btn btn-outline-light rounded-circle p-0 d-flex align-items-center justify-content-center flex-shrink-0" style={{ width: 36, height: 36 }}>‹</button>
 
           {sellers.map(s => (
             <SellerCard key={s.id} seller={s} />
           ))}
 
-          <button className="carousel-nav-btn">›</button>
+          <button className="btn btn-outline-light rounded-circle p-0 d-flex align-items-center justify-content-center flex-shrink-0" style={{ width: 36, height: 36 }}>›</button>
         </div>
       </div>
     </section>

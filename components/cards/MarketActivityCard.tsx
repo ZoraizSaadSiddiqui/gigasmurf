@@ -1,3 +1,5 @@
+import { GameIcon } from './GameIcons';
+
 export interface MarketActivityItem {
   id: number;
   name: string;
@@ -5,30 +7,28 @@ export interface MarketActivityItem {
   price: string;
   time: string;
   status?: string;
-  icon: string;
-  iconClass: string;
+  icon?: string;
+  iconClass?: string;
 }
 
-export interface MarketActivityCardProps {
+interface MarketActivityCardProps {
   item: MarketActivityItem;
   isSold?: boolean;
 }
 
 export default function MarketActivityCard({ item, isSold = false }: MarketActivityCardProps) {
   return (
-    <div className="market-item">
-      <div className="market-item-left">
-        <div className={`market-item-icon ${item.iconClass}`}>{item.icon}</div>
-        <div>
-          <div className="market-item-name">{item.name}</div>
-          {isSold ? (
-            <div className="market-item-sold">{item.status} • {item.time}</div>
-          ) : (
-            <div className="market-item-time">{item.sub || item.time}</div>
-          )}
+    <div className="market-activity-item d-flex align-items-center justify-content-between">
+      <div className="market-activity-item__left d-flex align-items-center">
+        <GameIcon iconClass={item.iconClass} />
+        <div className="market-activity-item__text">
+          <h6 className="market-activity-item__name">{item.name}</h6>
+          <span className="market-activity-item__sub">
+            {isSold ? <><span className="market-activity-item__sold-label">{item.status ?? 'Sold'}</span><span>{item.time}</span></> : item.sub ?? item.time}
+          </span>
         </div>
       </div>
-      <div className="market-item-price">{item.price}</div>
+      <span className="market-activity-item__price">{item.price}</span>
     </div>
   );
 }

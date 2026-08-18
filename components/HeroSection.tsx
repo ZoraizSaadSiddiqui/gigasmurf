@@ -1,83 +1,177 @@
 'use client';
-import { useState } from 'react';
-
-type TabType = 'accounts' | 'boosting';
 
 interface CategoryPill {
   label: string;
-  icon: string;
+  image: string;
 }
 
 const CATEGORIES: CategoryPill[] = [
-  { label: 'Currency', icon: '💰' },
-  { label: 'Items', icon: '👕' },
-  { label: 'Coaching', icon: '🏆' },
-  { label: 'Gift Cards', icon: '🎁' },
-  { label: 'Top Ups', icon: '💎' },
+  { label: 'Currency', image: '/cat-currency.png' },
+  { label: 'Items', image: '/cat-items.png' },
+  { label: 'Coaching', image: '/cat-coaching.png' },
+  { label: 'Gift Cards', image: '/cat-giftcards.png' },
+  { label: 'Top Ups', image: '/cat-topups.png' },
 ];
 
-const POPULAR_TAGS: string[] = ['Valorant', 'Brawl Stars', 'Clash Royale', 'Roblox', 'Fortnite', 'CS2'];
+const POPULAR_TAGS = [
+  'Valorant',
+  'Brawl Stars',
+  'Clash Royale',
+  'Roblox',
+  'Fortnite',
+  'CS2',
+];
+
+function SearchIcon() {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
+      <circle cx="11" cy="11" r="7" />
+      <path d="M20 20L16.2 16.2" />
+    </svg>
+  );
+}
+
+function UserIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
+      <circle cx="12" cy="7" r="4" />
+      <path d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7" />
+    </svg>
+  );
+}
+
+function LightningIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
+      <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" />
+    </svg>
+  );
+
+}
 
 export default function HeroSection() {
-  const [activeTab, setActiveTab] = useState<TabType>('accounts');
 
   return (
-    <section className="hero-section">
-      <div className="hero-bg-overlay" />
-      {/* Decorative stars */}
-      <span className="deco-star" style={{ top: '20%', left: '5%' }}>✦</span>
-      <span className="deco-star" style={{ top: '60%', right: '8%', fontSize: '12px' }}>✦</span>
-      <span className="deco-star" style={{ top: '40%', left: '15%', fontSize: '8px' }}>✦</span>
+    <section className="hero-section text-center position-relative overflow-hidden py-5 d-flex align-items-center justify-content-center">
 
-      <div className="container hero-content">
-        {/* Search */}
-        <div className="search-wrapper">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2">
-            <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
-          </svg>
-          <input type="text" placeholder="Search for games, accounts, boosting services..." />
-        </div>
+      {/* Background Overlay */}
 
-        {/* Popular tags */}
-        <div className="popular-tags">
-          <span className="tag-label">Popular:</span>
-          {POPULAR_TAGS.map(t => (
-            <a key={t} className="tag">{t}</a>
-          ))}
-        </div>
+     <div className="custom-section mx-auto d-flex flex-column align-items-center justify-content-center">
 
-        {/* Toggle */}
-        <div className="hero-toggle">
-          <button
-            className={`toggle-btn ${activeTab === 'accounts' ? 'active' : 'inactive'}`}
-            onClick={() => setActiveTab('accounts')}
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-            Accounts
-          </button>
-          <button
-            className={`toggle-btn ${activeTab === 'boosting' ? 'active' : 'inactive'}`}
-            onClick={() => setActiveTab('boosting')}
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-            </svg>
-            Boosting
-          </button>
-        </div>
+        {/* Search + Popular */}
+        <div className="hero-content mx-auto">
 
-        {/* Category pills */}
-        <div className="category-pills">
-          {CATEGORIES.map(c => (
-            <div key={c.label} className="cat-pill">
-              <span className="cat-icon">{c.icon}</span>
-              {c.label}
+          {/* Search Bar */}
+          <div className="d-flex justify-content-center mb-4">
+            <div className="hero-search-bar d-flex align-items-center justify-content-between">
+
+              <div className="d-flex align-items-center w-100 gap-3">
+
+                <span className="text-white-50 d-flex align-items-center">
+                  <SearchIcon />
+                </span>
+
+                <input
+                  type="text"
+                  placeholder="Search for games, accounts, boosting services..."
+                  className="form-control bg-transparent text-white border-0 shadow-none p-0"
+                />
+
+              </div>
+
             </div>
+          </div>
+
+          {/* Popular Tags */}
+<div className="popular-container d-flex align-items-center justify-content-center flex-wrap mx-auto mb-4">
+
+  <span className="text-white-50 small">
+    Popular:
+  </span>
+
+  {POPULAR_TAGS.map((tag) => (
+    <button
+      key={tag}
+      type="button"
+      className="popular-tag-btn d-inline-flex align-items-center justify-content-center"
+    >
+      {tag}
+    </button>
+  ))}
+
+</div>
+</div>
+
+{/* Accounts / Boosting Tabs */}
+<div className="hero-tabs-wrapper font-white d-flex justify-content-center align-items-center flex-wrap mx-auto mb-5">
+
+  <button
+    type="button"
+    className="hero-tab-btn d-inline-flex align-items-center justify-content-center"
+  >
+    <UserIcon />
+    <span>Accounts</span>
+  </button>
+
+  <button
+    type="button"
+    className="hero-tab-btn d-inline-flex align-items-center justify-content-center"
+  >
+    <span className="boosting-icon">
+      <LightningIcon />
+    </span>
+    <span>Boosting</span>
+  </button>
+
+</div>
+        {/* Categories */}
+        <div className="categories-wrapper d-flex justify-content-center align-items-center flex-wrap mx-auto">
+
+          {CATEGORIES.map((category) => (
+            <button
+              key={category.label}
+              type="button"
+              className="btn category-btn d-inline-flex align-items-center justify-content-center"
+            >
+
+              <img
+                src={category.image}
+                alt={category.label}
+                width="36"
+                height="36"
+                style={{ objectFit: 'contain' }}
+              />
+
+              <span>
+                {category.label}
+              </span>
+
+            </button>
           ))}
+
         </div>
+
       </div>
     </section>
   );

@@ -9,17 +9,17 @@ const featuredAccounts: AccountData[] = [
 
 export default function FeaturedAccounts() {
   return (
-    <section className="featured-section">
+    <section className="py-5 bg-deep-dark">
       <div className="container">
-        <div className="section-header">
-          <div className="section-header-title">
-            Daily Featured <span>Accounts</span>
-          </div>
+        <div className="d-flex align-items-center justify-content-between mb-4">
+          <h3 className="font-heading text-white fw-bold fs-3 mb-0">
+            Daily Featured <span className="text-purple">Accounts</span>
+          </h3>
           <div className="d-flex align-items-center gap-3">
-            <span className="see-all-link">See All (102) →</span>
-            <div className="carousel-nav">
-              <button className="carousel-btn">‹</button>
-              <button className="carousel-btn active-btn">3</button>
+            <span className="text-white-50 small cursor-pointer hover-purple">See All (102) →</span>
+            <div className="d-flex gap-2">
+              <button className="btn btn-outline-light rounded-circle p-0 d-flex align-items-center justify-content-center" style={{ width: 32, height: 32, fontSize: 12 }}>‹</button>
+              <button className="btn btn-purple rounded-circle p-0 d-flex align-items-center justify-content-center" style={{ width: 32, height: 32, fontSize: 12 }}>3</button>
             </div>
           </div>
         </div>
