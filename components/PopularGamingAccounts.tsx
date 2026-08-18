@@ -1,6 +1,6 @@
-import GameCard from './cards/GameCard';
+import GameCard, { GameData } from './cards/GameCard';
 
-const popularGames = [
+const popularGames: GameData[] = [
   { id: 1, name: 'Overwatch 2', emoji: '🎯', bg: 'linear-gradient(135deg, #001855, #0050b3)', wide: true },
   { id: 2, name: 'League of Legends', emoji: '⚔️', bg: 'linear-gradient(135deg, #1a0a00, #8B4513)' },
   { id: 3, name: 'Valorant', emoji: '🔫', bg: 'linear-gradient(135deg, #2a0000, #cc0033)' },

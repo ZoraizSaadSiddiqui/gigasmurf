@@ -1,14 +1,14 @@
-import MarketActivityCard from './cards/MarketActivityCard';
+import MarketActivityCard, { MarketActivityItem } from './cards/MarketActivityCard';
 import FlashDealCard from './cards/FlashDealCard';
 
-const liveActivity = [
+const liveActivity: MarketActivityItem[] = [
   { id: 1, name: 'Fortnite V-Bucks', sub: 'Add Now', price: '$25.00', time: 'Just now', icon: '🎮', iconClass: 'item-icon-fortnite' },
   { id: 2, name: 'Valorant Radiant Account', sub: '', price: '$450.00', time: '2 mins ago', icon: '🔫', iconClass: 'item-icon-valorant' },
   { id: 3, name: 'LoL Diamond IV Boost', sub: '', price: '$89.00', time: '5 mins ago', icon: '⚔️', iconClass: 'item-icon-lol' },
   { id: 4, name: '10,000 Brawl Gems', sub: '', price: '$120.00', time: '12 mins ago', icon: '💎', iconClass: 'item-icon-brawl' },
 ];
 
-const recentlySold = [
+const recentlySold: MarketActivityItem[] = [
   { id: 1, name: '10,000 Brawl Gems', price: '$120.00', time: '1 min ago', status: 'Sold', icon: '💎', iconClass: 'item-icon-brawl' },
   { id: 2, name: 'LoL Diamond IV Boost', price: '$89.00', time: '3 mins ago', status: 'Sold', icon: '⚔️', iconClass: 'item-icon-lol' },
   { id: 3, name: 'Valorant Radiant Account', price: '$450.00', time: '4 mins ago', status: 'Sold', icon: '🔫', iconClass: 'item-icon-valorant' },

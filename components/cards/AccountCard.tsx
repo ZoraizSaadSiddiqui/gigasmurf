@@ -1,4 +1,19 @@
-export default function AccountCard({ acc }) {
+export interface AccountData {
+  id: number;
+  name: string;
+  desc: string;
+  seller: string;
+  rating: string;
+  price: string;
+  emoji: string;
+  bg: string;
+}
+
+export interface AccountCardProps {
+  acc: AccountData;
+}
+
+export default function AccountCard({ acc }: AccountCardProps) {
   return (
     <div className="account-card">
       <div style={{ position: 'relative' }}>

@@ -1,4 +1,20 @@
-export default function SellerCard({ seller }) {
+export interface SellerData {
+  id: number;
+  name: string;
+  emoji: string;
+  bg: string;
+  featured?: boolean;
+  success?: string;
+  orders?: string;
+  rating?: string;
+  badge?: string;
+}
+
+export interface SellerCardProps {
+  seller: SellerData;
+}
+
+export default function SellerCard({ seller }: SellerCardProps) {
   return (
     <div className={`seller-card ${seller.featured ? 'featured' : ''}`}>
       <div

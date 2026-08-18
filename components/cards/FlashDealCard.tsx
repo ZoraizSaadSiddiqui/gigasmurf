@@ -1,8 +1,14 @@
 'use client';
 import { useState, useEffect } from 'react';
 
+interface TimeState {
+  h: number;
+  m: number;
+  s: number;
+}
+
 export default function FlashDealCard() {
-  const [time, setTime] = useState({ h: 1, m: 42, s: 10 });
+  const [time, setTime] = useState<TimeState>({ h: 1, m: 42, s: 10 });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -19,7 +25,7 @@ export default function FlashDealCard() {
     return () => clearInterval(interval);
   }, []);
 
-  const pad = n => String(n).padStart(2, '0');
+  const pad = (n: number): string => String(n).padStart(2, '0');
 
   return (
     <div className="flash-deal-card">

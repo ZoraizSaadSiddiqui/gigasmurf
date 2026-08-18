@@ -1,8 +1,25 @@
 'use client';
 import { useState } from 'react';
 
+type TabType = 'accounts' | 'boosting';
+
+interface CategoryPill {
+  label: string;
+  icon: string;
+}
+
+const CATEGORIES: CategoryPill[] = [
+  { label: 'Currency', icon: '💰' },
+  { label: 'Items', icon: '👕' },
+  { label: 'Coaching', icon: '🏆' },
+  { label: 'Gift Cards', icon: '🎁' },
+  { label: 'Top Ups', icon: '💎' },
+];
+
+const POPULAR_TAGS: string[] = ['Valorant', 'Brawl Stars', 'Clash Royale', 'Roblox', 'Fortnite', 'CS2'];
+
 export default function HeroSection() {
-  const [activeTab, setActiveTab] = useState('accounts');
+  const [activeTab, setActiveTab] = useState<TabType>('accounts');
 
   return (
     <section className="hero-section">
@@ -24,7 +41,7 @@ export default function HeroSection() {
         {/* Popular tags */}
         <div className="popular-tags">
           <span className="tag-label">Popular:</span>
-          {['Valorant', 'Brawl Stars', 'Clash Royale', 'Roblox', 'Fortnite', 'CS2'].map(t => (
+          {POPULAR_TAGS.map(t => (
             <a key={t} className="tag">{t}</a>
           ))}
         </div>
@@ -54,13 +71,7 @@ export default function HeroSection() {
 
         {/* Category pills */}
         <div className="category-pills">
-          {[
-            { label: 'Currency', icon: '💰' },
-            { label: 'Items', icon: '👕' },
-            { label: 'Coaching', icon: '🏆' },
-            { label: 'Gift Cards', icon: '🎁' },
-            { label: 'Top Ups', icon: '💎' },
-          ].map(c => (
+          {CATEGORIES.map(c => (
             <div key={c.label} className="cat-pill">
               <span className="cat-icon">{c.icon}</span>
               {c.label}

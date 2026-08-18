@@ -1,6 +1,6 @@
-import SellerCard from './cards/SellerCard';
+import SellerCard, { SellerData } from './cards/SellerCard';
 
-const sellers = [
+const sellers: SellerData[] = [
   { id: 1, name: 'BoostKing', emoji: '👾', bg: '#1A0B2E', featured: false },
   { id: 2, name: 'MythicSeller', emoji: '🎮', bg: '#260B4A', featured: true, success: '99.8%', orders: '4k+', rating: '4.9', badge: 'Top-Rated' },
   { id: 3, name: 'LegendStore', emoji: '⚡', bg: '#1A0B2E', featured: false },

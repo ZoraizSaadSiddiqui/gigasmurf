@@ -1,6 +1,6 @@
-import AccountCard from './cards/AccountCard';
+import AccountCard, { AccountData } from './cards/AccountCard';
 
-const featuredAccounts = [
+const featuredAccounts: AccountData[] = [
   { id: 1, name: 'Valorant Account', desc: 'Full Access EU Account | ⓡ 340', seller: 'AceTrader', rating: '4.9', price: '$1,299', emoji: '🔫', bg: 'linear-gradient(135deg, #1a0030, #8B0000)' },
   { id: 2, name: 'Brawl Stars 50K+ Trophies', desc: 'All Brawlers Unlocked | ⓡ 340', seller: 'AceTrader', rating: '4.9', price: '$1,299', emoji: '⭐', bg: 'linear-gradient(135deg, #001a3a, #0066cc)' },
   { id: 3, name: 'Fortnite OG Account', desc: 'Renegade Raider + 150 Skins | ⓡ 340', seller: 'AceTrader', rating: '4.9', price: '$1,299', emoji: '🎮', bg: 'linear-gradient(135deg, #003a1a, #006633)' },

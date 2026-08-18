@@ -1,4 +1,20 @@
-export default function MarketActivityCard({ item, isSold = false }) {
+export interface MarketActivityItem {
+  id: number;
+  name: string;
+  sub?: string;
+  price: string;
+  time: string;
+  status?: string;
+  icon: string;
+  iconClass: string;
+}
+
+export interface MarketActivityCardProps {
+  item: MarketActivityItem;
+  isSold?: boolean;
+}
+
+export default function MarketActivityCard({ item, isSold = false }: MarketActivityCardProps) {
   return (
     <div className="market-item">
       <div className="market-item-left">

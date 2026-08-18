@@ -1,6 +1,6 @@
-import BoostingCard from './cards/BoostingCard';
+import BoostingCard, { BoostingServiceData } from './cards/BoostingCard';
 
-const boostingServices = [
+const boostingServices: BoostingServiceData[] = [
   { id: 1, name: 'Gaming Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', emoji: '🎮', bg: '#1a0030' },
   { id: 2, name: 'Feathershot Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', emoji: '🏹', bg: '#001a33' },
   { id: 3, name: 'Samurai Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', emoji: '⚔️', bg: '#1a0000' },

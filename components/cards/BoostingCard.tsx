@@ -1,4 +1,17 @@
-export default function BoostingCard({ svc }) {
+export interface BoostingServiceData {
+  id: number;
+  name: string;
+  maxLevel: string;
+  startingPrice: string;
+  emoji: string;
+  bg: string;
+}
+
+export interface BoostingCardProps {
+  svc: BoostingServiceData;
+}
+
+export default function BoostingCard({ svc }: BoostingCardProps) {
   return (
     <div className="boosting-card">
       <div className="boosting-card-img-placeholder" style={{ background: svc.bg }}>
