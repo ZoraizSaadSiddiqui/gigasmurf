@@ -12,155 +12,22 @@
   --gradient-hero: linear-gradient(135deg, #11072D 0%, #1A0B2E 40%, #260B4A 100%);
 }
 
+/* Shared Figma canvas colour for the complete home page. */
+html,
+body,
+main {
+  background-color: #11072d !important;
+}
+
+main > section,
+main > footer {
+  background-color: #11072d !important;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html, body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--deep-dark);
-  color: #ffffff;
-  overflow-x: hidden;
-}
-
-h1, h2, h3, h4, h5, h6, .font-heading {
-  font-family: 'Manrope', sans-serif;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Bootstrap Theme Utilities */
-.bg-deep-dark {
-  background-color: var(--deep-dark) !important;
-}
-
-.bg-dark-purple {
-  background-color: var(--dark-purple) !important;
-}
-
-.bg-purple {
-  background-color: var(--primary) !important;
-}
-
-.text-purple {
-  color: var(--primary) !important;
-}
-
-.border-purple {
-  border-color: rgba(160, 35, 236, 0.4) !important;
-}
-
-.border-card-dark {
-  border: 1px solid var(--border-card) !important;
-}
-
-.card-dark {
-  background-color: var(--bg-card) !important;
-  border: 1px solid var(--border-card) !important;
-  border-radius: 1rem !important;
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.card-dark:hover {
-  transform: translateY(-4px);
-  border-color: rgba(160, 35, 236, 0.4) !important;
-}
-
-/* Custom Bootstrap Buttons */
-.btn-purple {
-  background-color: var(--primary) !important;
-  color: #ffffff !important;
-  border: none !important;
-  transition: all 0.2s ease;
-}
-
-.btn-purple:hover {
-  background-color: var(--primary-dark) !important;
-  color: #ffffff !important;
-  transform: translateY(-1px);
-}
-
-.btn-outline-purple {
-  border: 1px solid var(--primary) !important;
-  color: #ffffff !important;
-  background: transparent !important;
-  transition: all 0.2s ease;
-}
-
-.btn-outline-purple:hover {
-  background-color: var(--primary) !important;
-  color: #ffffff !important;
-}
-
-.btn-outline-light-custom {
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  color: #ffffff !important;
-  background: transparent !important;
-  transition: all 0.2s ease;
-}
-
-.btn-outline-light-custom:hover {
-  border-color: #ffffff !important;
-  background-color: rgba(255, 255, 255, 0.1) !important;
-}
-
-/* Custom Bootstrap Badges */
-.badge-purple {
-  background-color: var(--primary) !important;
-  color: #ffffff !important;
-}
-
-.badge-live {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #2ECC71;
-  display: inline-block;
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
-}
-
-.deco-star {
-  position: absolute;
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 16px;
-  pointer-events: none;
-}
-
-/* Custom Form Input for Bootstrap */
-.form-control-dark {
-  background-color: rgba(255, 255, 255, 0.07) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  color: #ffffff !important;
-  border-radius: 50rem !important;
-  padding: 0.75rem 1.25rem !important;
-}
-
-.form-control-dark::placeholder {
-  color: rgba(255, 255, 255, 0.4) !important;
-}
-
-.form-control-dark:focus {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  border-color: var(--primary) !important;
-  box-shadow: 0 0 0 0.25rem rgba(160, 35, 236, 0.25) !important;
-  color: #ffffff !important;
-}
-
-/* Seller Card Featured */
-.seller-card-featured {
-  background: rgba(160, 35, 236, 0.15) !important;
-  border-color: var(--primary) !important;
-  transform: scale(1.08);
 }
 
 
@@ -300,7 +167,20 @@ a {
   font-family: 'Manrope', sans-serif;
   font-size: 14px;
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: none;
+  animation: none;
+  pointer-events: none;
+  cursor: default;
+}
+.category-btn:hover,
+.category-btn:focus,
+.category-btn:active,
+.category-btn.active {
+  border-color: #A023EC33 !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  box-shadow: none !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  transform: none !important;
 }
 .category-label {
   font-family: 'Manrope', sans-serif;
@@ -858,8 +738,16 @@ a {
   width: 100%;
 }
 
+.flash-deal-card .market-widget-card__title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
+
 .flash-deal-card__content {
-  gap: 12px;
+  width: 237px;
+  gap: 16px;
 }
 
 .flash-deal-card__image,
@@ -873,17 +761,19 @@ a {
 }
 
 .flash-deal-card__description {
-  max-width: 237px;
-  color: rgba(255, 255, 255, .6);
+  width: 237px;
+  min-height: 38px;
+  color: #cfc2d6;
   font-family: 'Manrope', sans-serif;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
   text-align: center;
 }
 
 .flash-deal-card__description span {
-  color: #fff;
-  font-weight: 600;
+  color: inherit;
+  font-weight: 700;
 }
 
 .flash-deal-timer {
@@ -892,12 +782,19 @@ a {
 }
 
 .flash-deal-card__button {
-  width: 100%;
-  min-height: 40px;
-  padding: 8px 20px;
+  width: 235px;
+  height: 48px;
+  min-height: 48px;
+  padding: 14px 36px;
+  gap: 12px !important;
+  border: 2px solid rgba(255, 255, 255, .2) !important;
+  border-radius: 105px !important;
+  background: #a023ec !important;
   font-family: 'Manrope', sans-serif;
   font-size: 14px;
   font-weight: 600;
+  line-height: 1;
+  box-shadow: none;
 }
 
 @media (max-width: 1230px) {
@@ -906,4 +803,237 @@ a {
   .live-market-card,
   .live-market-card--flash { flex: 1 1 min(448px, 100%); width: auto; }
   .live-market-card--flash .market-widget-card { width: 100%; max-width: none; }
+}
+
+/* Daily Featured Accounts — Figma frame using Bootstrap's grid and controls. */
+.featured-accounts-section {
+  width: 1230px;
+  height: 650px;
+  padding-top: 50px;
+  padding-bottom: 70px;
+  gap: 56px;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+
+.featured-accounts-header {
+  width: 100%;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.featured-accounts-title {
+  color: #fff;
+  font-family: 'Manrope', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.featured-accounts-title span,
+.featured-see-all { color: #a023ec; }
+
+.featured-see-all {
+  background: transparent;
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.featured-nav {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(160, 35, 236, .35);
+  color: #fff;
+  font-size: 21px;
+  line-height: 1;
+}
+
+.featured-nav--previous { background: transparent; }
+.featured-nav--next { border-color: #a023ec; background: #a023ec; }
+
+.featured-accounts-grid {
+  gap: 16px;
+}
+
+.featured-accounts-carousel {
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.featured-accounts-grid {
+  width: 100%;
+}
+
+.featured-account-column {
+  flex: 0 0 calc((100% - 48px) / 4);
+  min-width: 0;
+}
+
+.account-card {
+  min-height: 381px;
+  border: 1px solid rgba(160, 35, 236, .45);
+  border-radius: 16px;
+  background: linear-gradient(160.61deg, rgba(255, 255, 255, .1) 0%, rgba(255, 255, 255, .05) 101.7%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+  backdrop-filter: blur(28.64761734008789px);
+  -webkit-backdrop-filter: blur(28.64761734008789px);
+}
+
+.account-card__art {
+  height: 174px;
+  overflow: hidden;
+  background: #1c0c3e;
+}
+
+.account-card__art::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background: linear-gradient(180deg, rgba(12, 3, 34, .04) 42%, rgba(17, 7, 45, .78) 100%);
+  pointer-events: none;
+}
+
+.account-card__art img { object-fit: cover; transform: scale(1.08); }
+.account-artwork--orange img { filter: hue-rotate(-18deg) saturate(1.25); }
+.account-artwork--violet img { filter: hue-rotate(28deg) saturate(1.35) brightness(.82); }
+.account-artwork--pink img { filter: hue-rotate(75deg) saturate(1.45); }
+.account-artwork--cyan img { filter: hue-rotate(145deg) saturate(1.3) brightness(.88); }
+
+/* Direct Figma artwork files from /public: preserve their original colours. */
+.account-card__art img { filter: none !important; }
+
+.account-card__promoted {
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  left: 12px;
+  padding: 4px 8px;
+  border: 1px solid rgba(34, 197, 94, .2);
+  background: rgba(34, 197, 94, .12);
+  color: #22c55e;
+  font-family: 'Manrope', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.account-card__favorite {
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  right: 12px;
+  width: 35.92px;
+  height: 35.92px;
+  padding: 4.73px;
+  border: 0;
+  border-radius: 94.54px !important;
+  background: rgba(160, 35, 236, .2);
+  backdrop-filter: blur(28.36px);
+  -webkit-backdrop-filter: blur(28.36px);
+  color: #fff;
+}
+
+.account-card__favorite svg { width: 18px; height: 18px; stroke-width: 1.55; }
+.account-card__body { padding: 16px; }
+.account-card__name { margin: 0 0 6px; color: #fff; font-family: 'Manrope', sans-serif; font-size: 16px; font-weight: 700; line-height: 1.25; }
+.account-card__description { min-height: 32px; margin: 0 0 16px; color: #cfc2d6; font-family: 'Manrope', sans-serif; font-size: 11px; line-height: 16px; }
+.account-card__description span { white-space: nowrap; }
+.account-card__seller, .account-card__rating { color: #cfc2d6; font-family: 'Manrope', sans-serif; font-size: 11px; }
+.account-card__avatar { width: 22px; height: 22px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: #a023ec; color: #fff; font-size: 10px; font-weight: 700; }
+.account-card__seller i { width: 6px; height: 6px; display: inline-block; border-radius: 50%; background: #22c55e; }
+.account-card__rating span { color: #f2c94c; }
+.account-card__footer { margin-top: auto; padding: 14px 16px; border-top: 1px solid rgba(255, 255, 255, .08); }
+.account-card__footer > div { display: flex; flex-direction: column; gap: 2px; }
+.account-card__footer span { color: #cfc2d6; font-family: 'Manrope', sans-serif; font-size: 10px; }
+.account-card__footer strong { color: #fff; font-family: 'Manrope', sans-serif; font-size: 18px; line-height: 1.1; }
+.account-card__buy { min-width: 78px; padding: 8px 15px; font-family: 'Manrope', sans-serif; font-size: 12px; font-weight: 600; }
+.account-card__buy span { color: #fff; font-size: 18px; line-height: 10px; }
+
+/* Exact featured-card dimensions from the supplied Figma inspector. */
+.featured-accounts-container { width: min(1328px, 100%); }
+.featured-accounts-header { height: 57px; margin-bottom: 36px; }
+.featured-accounts-title { font-size: 42px; line-height: 1; }
+.featured-account-column { flex: 0 0 320px; }
+.account-card {
+  width: 320px;
+  min-width: 320px;
+  height: 417px;
+  min-height: 417px;
+  padding: 8px;
+  border: 1px solid rgba(160, 35, 236, .3);
+  border-radius: 16px;
+  background: rgba(26, 11, 46, .6);
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.account-card--glowing { border-color: #a023ec; box-shadow: 0 0 20px rgba(160, 35, 236, .55), inset 0 0 16px rgba(160, 35, 236, .18); }
+.account-card__art { height: 192px; flex: 0 0 192px; border-radius: 12px; }
+.account-card__art::after { display: none; }
+.account-card__body { height: 207px; display: flex; flex: 0 0 207px; flex-direction: column; padding: 16px 12px; }
+.account-card__name { margin-bottom: 6px; font-size: 20px; line-height: 22px; }
+.account-card__description { min-height: 0; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,.15); font-size: 14px; line-height: 18px; }
+.account-card__views { display: inline-flex; align-items: center; gap: 4px; margin-left: 4px; color: #cfc2d6; }
+.account-card__eye { width: 14px; height: 14px; flex: 0 0 14px; }
+.account-card__seller, .account-card__rating { color: #fff; font-size: 16px; font-weight: 600; line-height: 20px; }
+.account-card__avatar { position: relative; width: 24px; height: 24px; overflow: hidden; border: .5px solid rgba(207, 194, 214, .2); background: #260b4a; font-size: 0; }
+.account-card__avatar img { object-fit: cover; object-position: center; }
+.account-card__verified { width: 12px; height: 12px; flex: 0 0 12px; color: #22c55e; }
+.account-card__seller i { display: none; }
+.account-card__rating span { color: #a023ec; }
+.account-card__footer { margin-top: auto; padding: 0; border-top: 0; }
+.account-card__footer span { color: #cfc2d6; font-size: 14px; font-weight: 400; line-height: 14px; }
+.account-card__footer strong { font-size: 24px; font-weight: 800; line-height: 32px; }
+.account-card__buy { width: auto; height: 48px; padding: 14px 24px; font-size: 18px; font-weight: 700; line-height: 18px; }
+.account-card__buy svg { width: 12px; height: 24px; flex: 0 0 12px; }
+
+/* Featured-card hover and carousel states match the Figma variants. */
+.featured-nav {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(160, 35, 236, .45);
+  background: transparent !important;
+  color: #fff;
+  transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+}
+.featured-nav.is-active {
+  border-color: #a023ec;
+  background: #a023ec !important;
+}
+.featured-nav:hover { border-color: #a023ec; color: #fff; }
+.account-card__buy {
+  width: auto;
+  min-width: 101px;
+  height: 48px;
+  padding: 14px 24px;
+  border: 2px solid #a023ec !important;
+  background: transparent !important;
+  color: #a023ec !important;
+  transition: background-color .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.account-card__buy span { color: currentColor; }
+.account-card:hover .account-card__buy,
+.account-card__buy:hover {
+  background: #a023ec !important;
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(160, 35, 236, .38);
+}
+.account-card--glowing .account-card__buy {
+  background: transparent !important;
+  color: #a023ec !important;
+  box-shadow: none;
+}
+.account-card--glowing .account-card__buy svg { color: currentColor; }
+.account-card:hover { border-color: #b33af5; box-shadow: 0 0 20px rgba(160, 35, 236, .36); }
+
+@media (max-width: 575px) {
+  .featured-accounts-title { font-size: 32px; }
+  .featured-account-column, .account-card { width: 100%; min-width: 100%; }
 }

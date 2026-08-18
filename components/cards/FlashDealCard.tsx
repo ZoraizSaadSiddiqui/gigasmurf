@@ -50,7 +50,7 @@ export default function FlashDealCard() {
     <div className="market-widget-card card h-100 flash-deal-card">
       <div className="flash-deal-card__header d-flex align-items-center justify-content-between">
         <h5 className="market-widget-card__title">Flash Deal</h5>
-        <span className="badge rounded-pill flash-deal-badge">40%</span>
+        <span className="badge rounded-pill flash-deal-badge">-40%</span>
       </div>
 
       <div className="flash-deal-card__content d-flex flex-column align-items-center">
