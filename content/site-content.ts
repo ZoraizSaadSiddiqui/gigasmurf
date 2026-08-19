@@ -68,4 +68,9 @@ export const siteContent = {
     { id: 5, name: 'Immortal Valorant Account', desc: 'Premium Skins + Full Access', seller: 'AceTrader', rating: '4.9', price: '$999', image: '/3.png' },
     { id: 6, name: 'Fortnite Black Knight', desc: 'OG Cosmetics + 120 Skins', seller: 'AceTrader', rating: '4.8', price: '$899', image: '/1.png' },
   ] satisfies AccountData[],
+  popularGamingAccounts: [
+    { id: 1, name: 'Overwatch 2', image: '/Gemini-Generated-img1.png', featured: true },
+    { id: 2, name: 'League of Legends', image: '/Gemini-Generated-img2.png' },
+    { id: 3, name: 'Valorant', image: '/Gemini-Generated-img3.png' },
+  ],
 } as const;
