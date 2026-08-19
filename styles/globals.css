@@ -16,7 +16,7 @@ main>footer {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Manrope', 'Poppins', sans-serif !important;
+  font-family: 'Manrope', 'Poppins' !important;
 }
 
 .hero-tab-button {
@@ -362,8 +362,25 @@ main>footer {
 
   [data-live-marketplace-cards] {
     height: auto !important;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 24px !important;
+  }
+
+  [data-live-marketplace-column],
+  [data-live-marketplace-deal] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  [data-live-marketplace-card],
+  [data-live-marketplace-deal] > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   [data-featured-accounts] {
@@ -572,8 +589,8 @@ main>footer {
   [data-live-marketplace-column],
   [data-live-marketplace-deal] {
     width: 100% !important;
-    max-width: 448px !important;
-    flex: 0 0 auto !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
     margin-bottom: 24px !important;
     box-sizing: border-box !important;
   }
@@ -744,7 +761,7 @@ main>footer {
 
   [data-cta-section] {
     width: 100% !important;
-    padding: 24px 16px !important;
+    padding: 32px 16px !important;
     margin-bottom: 24px !important;
     box-sizing: border-box !important;
   }
@@ -753,24 +770,30 @@ main>footer {
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
-    min-height: auto !important;
-    padding: 28px 16px !important;
+    min-height: 0 !important;
+    flex: 0 0 auto !important;
+    padding: 32px 20px !important;
     margin-bottom: 0 !important;
     box-sizing: border-box !important;
-  }
-
-  [data-cta-content],
-  [data-cta-copy] {
-    width: 100% !important;
-    height: auto !important;
-    flex-basis: auto !important;
+    border-radius: 24px !important;
   }
 
   [data-cta-content] {
-    gap: 20px !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    flex: 0 0 auto !important;
+    flex-basis: auto !important;
+    gap: 24px !important;
+    justify-content: center !important;
   }
 
   [data-cta-copy] {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    flex: 0 0 auto !important;
+    flex-basis: auto !important;
     gap: 12px !important;
   }
 
@@ -778,44 +801,46 @@ main>footer {
   [data-cta-copy] p {
     width: 100% !important;
     height: auto !important;
+    margin: 0 !important;
   }
 
   [data-cta-copy] h2 {
     font-size: 22px !important;
     line-height: 1.25 !important;
+    text-align: center !important;
   }
 
   [data-cta-copy] p {
     font-size: 13.5px !important;
     line-height: 1.4 !important;
+    text-align: center !important;
   }
 
   [data-cta-actions] {
     width: 100% !important;
     height: auto !important;
+    flex: 0 0 auto !important;
     flex-basis: auto !important;
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
     justify-content: center !important;
     flex-wrap: wrap !important;
-    gap: 8px !important;
+    gap: 10px !important;
   }
 
   [data-cta-actions] button {
-    flex: 1 1 120px !important;
+    flex: 0 1 auto !important;
     width: auto !important;
     max-width: 100% !important;
-    min-width: 0 !important;
-    height: auto !important;
-    min-height: 38px !important;
-    padding: 6px 10px !important;
-    font-size: 11.5px !important;
+    height: 42px !important;
+    padding: 10px 16px !important;
+    font-size: 13px !important;
     font-weight: 700 !important;
-    line-height: 1.2 !important;
-    white-space: normal !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
     text-align: center !important;
-    word-break: break-word !important;
+    border-radius: 105px !important;
   }
 
   [data-site-footer] {

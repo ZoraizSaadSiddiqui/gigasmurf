@@ -122,7 +122,6 @@ export default function Footer() {
             gap: '10px',
           }}
         >
-          {/* top row */}
           <div
             data-footer-top-row
             style={{
@@ -135,7 +134,6 @@ export default function Footer() {
               gap: '40px',
             }}
           >
-            {/* logo + description + socials */}
             <div
               data-footer-brand
               style={{
@@ -175,7 +173,6 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* link columns */}
             <div
               data-footer-link-groups
               style={{
@@ -195,7 +192,6 @@ export default function Footer() {
               ))}
             </div>
 
-            {/* back to top — bottom-right of top row */}
             <button
               onClick={scrollToTop}
               aria-label="Back to top"
@@ -210,7 +206,6 @@ export default function Footer() {
             </button>
           </div>
 
-          {/* divider */}
           <div
             style={{
               width: '100%',
@@ -220,7 +215,6 @@ export default function Footer() {
             }}
           />
 
-          {/* copyright */}
           <p
             style={{
               fontWeight: 400,
