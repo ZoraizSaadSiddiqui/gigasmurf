@@ -41,7 +41,10 @@ export function BrawlIcon() {
 /* ── Icon wrapper: rounded square with purple bg ── */
 export function GameIconWrapper({ children }: { children: React.ReactNode }) {
   return (
-    <div className="game-icon-wrapper">
+    <div
+      className="d-flex align-items-center justify-content-center flex-shrink-0"
+      style={{ width: '48px', height: '48px', border: 0, borderRadius: 0, background: 'transparent' }}
+    >
       {children}
     </div>
   );

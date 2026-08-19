@@ -6,15 +6,20 @@ export default function Navbar() {
   const { navigation } = siteContent;
 
   return (
-    <nav className="navbar bg-deep-dark">
+    <nav className="navbar" style={{ backgroundColor: '#11072D' }}>
       <div className="container d-flex align-items-center justify-content-between">
         <a className="navbar-brand" href="#">
-          <img src="/logo.png" alt="Gigasmurf" className="navbar-logo" />
+          <img src="/logo.png" alt="Gigasmurf" style={{ width: '185.8px', height: '55.29px' }} />
         </a>
 
         <div className="d-flex align-items-center gap-4">
           {navigation.links.map((link) => (
-            <a key={link.label} href={link.href} className="text-white text-decoration-none manrope-font">
+            <a
+              key={link.label}
+              href={link.href}
+              className="text-white text-decoration-none"
+              style={{ fontFamily: 'Manrope', fontSize: '18px', fontWeight: 500, lineHeight: '100%', letterSpacing: '0%' }}
+            >
               {link.label}
             </a>
           ))}
@@ -27,7 +32,10 @@ export default function Navbar() {
               <circle cx="20" cy="21" r="1" />
               <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
             </svg>
-            <span className="badge-purple rounded-circle position-absolute d-flex align-items-center justify-content-center">
+            <span
+              className="rounded-circle position-absolute d-flex align-items-center justify-content-center"
+              style={{ top: '-6px', right: '-8px', width: '15px', height: '15px', fontSize: '9px', backgroundColor: '#A023EC', color: '#FFFFFF' }}
+            >
               {navigation.cartCount}
             </span>
           </a>
@@ -39,7 +47,11 @@ export default function Navbar() {
             </svg>
           </a>
 
-          <button type="button" className="btn btn-purple rounded-pill px-4 py-2">
+          <button
+            type="button"
+            className="btn rounded-pill px-4 py-2"
+            style={{ backgroundColor: '#A023EC', borderColor: '#A023EC', color: '#FFFFFF' }}
+          >
             {navigation.sellLabel}
           </button>
         </div>

@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import BoostingCard, { BoostingServiceData } from './cards/BoostingCard';
 
 const boostingServices: BoostingServiceData[] = [
@@ -10,6 +11,34 @@ const boostingServices: BoostingServiceData[] = [
   { id: 7, name: 'Brave Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', image: '/11.jpg' },
   { id: 8, name: 'Witch Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', image: '/12.jpg' },
 ];
+
+const sellAllWrapperStyle: CSSProperties = {
+  width: '159px',
+  height: '64px',
+};
+
+const sellAllButtonStyle: CSSProperties = {
+  boxSizing: 'border-box',
+  width: '159px',
+  height: '64px',
+  padding: '11.67px 36px',
+  gap: '12px',
+  border: '2px solid #a023ec',
+  borderRadius: '105px',
+  background: 'rgba(160, 35, 236, 0.1)',
+  color: '#fff',
+  fontFamily: "'Manrope', sans-serif",
+  fontSize: '18px',
+  fontWeight: 700,
+  lineHeight: '30px',
+};
+
+const sellAllArrowStyle: CSSProperties = {
+  width: '16px',
+  height: '24px',
+  flex: '0 0 16px',
+  color: '#a023ec',
+};
 
 export default function TopRatedBoosting() {
   return (
@@ -40,10 +69,10 @@ export default function TopRatedBoosting() {
           ))}
         </div>
 
-        <div className="top-rated-boosting-cta d-flex justify-content-center">
-          <button type="button" className="btn top-rated-boosting-cta__button d-inline-flex align-items-center justify-content-center">
+        <div className="d-flex justify-content-center" style={sellAllWrapperStyle}>
+          <button type="button" className="btn d-inline-flex align-items-center justify-content-center" style={sellAllButtonStyle}>
             <span>Sell All</span>
-            <svg className="top-rated-boosting-cta__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><polyline points="9 18 15 12 9 6" /></svg>
+            <svg style={sellAllArrowStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><polyline points="9 18 15 12 9 6" /></svg>
           </button>
         </div>
       </div>

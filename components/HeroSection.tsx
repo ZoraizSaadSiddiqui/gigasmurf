@@ -1,6 +1,109 @@
 'use client';
 
+import { useState, type CSSProperties } from 'react';
 import { siteContent } from '@/content/site-content';
+
+const heroSectionStyle: CSSProperties = {
+  width: '100%',
+  minHeight: '480px',
+  position: 'relative',
+  background: 'radial-gradient(circle at 50% 45%, rgba(115, 24, 220, 0.18), transparent 42%), linear-gradient(180deg, #12052d 0%, #150637 55%, #100326 100%)',
+};
+
+const heroContentStyle: CSSProperties = {
+  width: '1230px',
+  maxWidth: '100%',
+  minHeight: '540px',
+  paddingTop: '90px',
+  paddingBottom: '60px',
+  margin: '0 auto',
+};
+
+const heroSearchStyle: CSSProperties = {
+  width: '812px',
+  maxWidth: '100%',
+  height: '80px',
+  opacity: 1,
+  borderRadius: '100px',
+  padding: '24px',
+  background: '#A023EC26',
+  boxShadow: '0 0 14px 0 #A023ECB2',
+};
+
+const popularContainerStyle: CSSProperties = {
+  maxWidth: '732px',
+  width: '100%',
+  minHeight: '54px',
+  gap: '16px',
+  opacity: 1,
+};
+
+const popularTagStyle: CSSProperties = {
+  height: '48px',
+  padding: '16px 20px',
+  gap: '10px',
+  opacity: 1,
+  boxSizing: 'border-box',
+  border: '1px solid rgba(255, 255, 255, 0.1)',
+  borderRadius: '100000px',
+  background: 'rgba(255, 255, 255, 0.05)',
+  color: 'rgba(255, 255, 255, 0.7)',
+  fontFamily: 'Manrope, sans-serif',
+  fontWeight: 400,
+  fontSize: '14px',
+  lineHeight: '100%',
+  textAlign: 'center',
+  transition: 'all 0.2s ease',
+};
+
+const heroTabsStyle: CSSProperties = { width: '525px', maxWidth: '100%', gap: '24px' };
+
+const heroTabStyle: CSSProperties = {
+  width: '247px',
+  height: '64px',
+  padding: '11.67px 48px',
+  gap: '10px',
+  boxSizing: 'border-box',
+  border: '2px solid #A023EC',
+  borderRadius: '105px',
+  background: 'transparent',
+  color: '#FFFFFF',
+  fontFamily: 'Manrope, sans-serif',
+  fontSize: '16px',
+  fontWeight: 600,
+};
+
+const categoriesStyle: CSSProperties = {
+  maxWidth: '848px',
+  width: '100%',
+  minHeight: '68px',
+  gap: '10px',
+  opacity: 1,
+  borderRadius: '100000px',
+};
+
+const categoryButtonStyle: CSSProperties = {
+  minWidth: '156px',
+  height: '68px',
+  padding: '16px 20px',
+  gap: '8px',
+  opacity: 1,
+  boxSizing: 'border-box',
+  border: '1px solid #A023EC33',
+  borderRadius: '100000px',
+  background: 'rgba(255, 255, 255, 0.04)',
+  color: 'rgba(255, 255, 255, 0.8)',
+  fontFamily: 'Manrope, sans-serif',
+  fontSize: '14px',
+  fontWeight: 500,
+  backdropFilter: 'blur(50px)',
+  WebkitBackdropFilter: 'blur(50px)',
+  boxShadow: 'none',
+  transition: 'none',
+  animation: 'none',
+  pointerEvents: 'none',
+  cursor: 'default',
+};
 
 function SearchIcon() {
   return <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="M20 20 16.2 16.2" /></svg>;
@@ -16,34 +119,44 @@ function LightningIcon() {
 
 export default function HeroSection() {
   const { hero } = siteContent;
+  const [searchValue, setSearchValue] = useState('');
 
   return (
-    <section className="hero-section text-center position-relative overflow-hidden py-5 d-flex align-items-center justify-content-center">
-      <div className="custom-section mx-auto d-flex flex-column align-items-center justify-content-center">
-        <div className="hero-content mx-auto">
+    <section className="text-center position-relative overflow-hidden py-5 d-flex align-items-center justify-content-center" style={heroSectionStyle}>
+      <div className="mx-auto d-flex flex-column align-items-center justify-content-center" style={heroContentStyle}>
+        <div className="mx-auto">
           <div className="d-flex justify-content-center mb-4">
-            <div className="hero-search-bar d-flex align-items-center justify-content-between">
+            <div className="d-flex align-items-center justify-content-between position-relative" style={heroSearchStyle}>
               <div className="d-flex align-items-center w-100 gap-3">
                 <span className="text-white-50 d-flex align-items-center"><SearchIcon /></span>
-                <input type="text" placeholder={hero.searchPlaceholder} className="form-control bg-transparent text-white border-0 shadow-none p-0" />
+                <input
+                  type="text"
+                  value={searchValue}
+                  onChange={(event) => setSearchValue(event.target.value)}
+                  placeholder=""
+                  aria-label={hero.searchPlaceholder}
+                  className="form-control bg-transparent text-white border-0 shadow-none p-0 position-relative"
+                  style={{ color: '#FFFFFF', zIndex: 1 }}
+                />
               </div>
+              {!searchValue && <span aria-hidden="true" style={{ position: 'absolute', top: '50%', left: '58px', transform: 'translateY(-50%)', color: 'rgba(255, 255, 255, 0.5)', pointerEvents: 'none' }}>{hero.searchPlaceholder}</span>}
             </div>
           </div>
 
-          <div className="popular-container d-flex align-items-center justify-content-center flex-wrap mx-auto mb-4">
+          <div className="d-flex align-items-center justify-content-center flex-wrap mx-auto mb-4" style={popularContainerStyle}>
             <span className="text-white-50 small">{hero.popularLabel}</span>
-            {hero.popularTags.map((tag) => <button key={tag} type="button" className="popular-tag-btn d-inline-flex align-items-center justify-content-center">{tag}</button>)}
+            {hero.popularTags.map((tag) => <button key={tag} type="button" className="d-inline-flex align-items-center justify-content-center" style={popularTagStyle}>{tag}</button>)}
           </div>
         </div>
 
-        <div className="hero-tabs-wrapper font-white d-flex justify-content-center align-items-center flex-wrap mx-auto mb-5">
-          <button type="button" className="hero-tab-btn d-inline-flex align-items-center justify-content-center"><UserIcon /><span>{hero.tabs[0]}</span></button>
-          <button type="button" className="hero-tab-btn d-inline-flex align-items-center justify-content-center"><span className="boosting-icon"><LightningIcon /></span><span>{hero.tabs[1]}</span></button>
+        <div className="d-flex justify-content-center align-items-center flex-wrap mx-auto mb-5" style={heroTabsStyle}>
+          <button type="button" className="d-inline-flex align-items-center justify-content-center" style={heroTabStyle}><UserIcon /><span>{hero.tabs[0]}</span></button>
+          <button type="button" className="d-inline-flex align-items-center justify-content-center" style={heroTabStyle}><span style={{ color: '#A023EC' }}><LightningIcon /></span><span>{hero.tabs[1]}</span></button>
         </div>
 
-        <div className="categories-wrapper d-flex justify-content-center align-items-center flex-wrap mx-auto">
+        <div className="d-flex justify-content-center align-items-center flex-wrap mx-auto" style={categoriesStyle}>
           {hero.categories.map((category) => (
-            <button key={category.label} type="button" className="btn category-btn d-inline-flex align-items-center justify-content-center">
+            <button key={category.label} type="button" className="btn d-inline-flex align-items-center justify-content-center" style={categoryButtonStyle}>
               <img src={category.image} alt={category.label} width="36" height="36" style={{ objectFit: 'contain' }} />
               <span>{category.label}</span>
             </button>
