@@ -48,7 +48,6 @@ const popularTagStyle: CSSProperties = {
   borderRadius: '100000px',
   background: 'rgba(255, 255, 255, 0.05)',
   color: 'rgba(255, 255, 255, 0.7)',
-  fontFamily: 'Poppins',
   fontWeight: 400,
   fontSize: '14px',
   lineHeight: '100%',
@@ -68,7 +67,6 @@ const heroTabStyle: CSSProperties = {
   borderRadius: '105px',
   background: 'transparent',
   color: '#FFFFFF',
-  fontFamily: 'Poppins',
   fontSize: '16px',
   fontWeight: 600,
 };
@@ -93,7 +91,6 @@ const categoryButtonStyle: CSSProperties = {
   borderRadius: '100000px',
   background: 'rgba(255, 255, 255, 0.04)',
   color: 'rgba(255, 255, 255, 0.8)',
-  fontFamily: 'Poppins',
   fontSize: '14px',
   fontWeight: 500,
   backdropFilter: 'blur(50px)',

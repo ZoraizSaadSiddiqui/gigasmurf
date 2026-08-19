@@ -40,7 +40,6 @@ const socialIcons = {
 export default function Footer() {
   const { brand, footer: footerContent } = siteContent;
   const linkStyle = {
-    fontFamily: 'Poppins',
     fontWeight: 400,
     fontSize: '18px',
     lineHeight: '1.5',
@@ -49,7 +48,6 @@ export default function Footer() {
   };
 
   const headingStyle = {
-    fontFamily: 'Poppins',
     fontWeight: 600,
     fontSize: '24px',
     lineHeight: '1.3',
@@ -156,7 +154,6 @@ export default function Footer() {
 
               <p
                 style={{
-                  fontFamily: 'Manrope',
                   fontWeight: 400,
                   fontSize: '18px',
                   lineHeight: '1.5',
@@ -226,7 +223,6 @@ export default function Footer() {
           {/* copyright */}
           <p
             style={{
-              fontFamily: 'Manrope',
               fontWeight: 400,
               fontSize: '16px',
               lineHeight: '1.5',

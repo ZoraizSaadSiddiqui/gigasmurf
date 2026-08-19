@@ -43,7 +43,6 @@ const bodyStyle: CSSProperties = {
 const titleStyle: CSSProperties = {
   margin: '0 0 8px',
   color: '#fff',
-  fontFamily: 'Poppins',
   fontSize: '18px',
   fontWeight: 600,
   lineHeight: '25px',
@@ -57,7 +56,6 @@ const detailsStyle: CSSProperties = {
 const detailRowStyle: CSSProperties = {
   height: '19px',
   color: '#cfc2d6',
-  fontFamily: 'Poppins',
   fontSize: '14px',
   fontWeight: 400,
   lineHeight: '19px',
@@ -72,7 +70,6 @@ const sellerStyle: CSSProperties = {
   height: '24px',
   marginTop: 'auto',
   color: '#fff',
-  fontFamily: 'Poppins',
   fontSize: '14px',
   fontWeight: 600,
   lineHeight: '20px',

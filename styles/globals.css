@@ -15,7 +15,7 @@ main > footer {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Manrope' !important;
+  font-family: 'Manrope', 'Poppins', sans-serif !important;
 }
 
 .hero-tab-button {

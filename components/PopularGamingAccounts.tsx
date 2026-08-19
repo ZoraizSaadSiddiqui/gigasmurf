@@ -31,7 +31,6 @@ const headerStyle: CSSProperties = {
 const titleStyle: CSSProperties = {
   margin: 0,
   color: '#fff',
-  fontFamily: 'Poppins',
   fontSize: '42px',
   fontWeight: 700,
   lineHeight: 1,
@@ -53,7 +52,6 @@ const controlButtonStyle: CSSProperties = {
   borderRadius: '9999px',
   background: 'transparent',
   color: '#fff',
-  fontFamily: 'Poppins',
   fontSize: '25px',
   lineHeight: '34px',
   cursor: 'pointer',
@@ -103,7 +101,6 @@ const gameTitleStyle: CSSProperties = {
   left: '24px',
   margin: 0,
   color: '#fff',
-  fontFamily: 'Poppins',
   fontSize: '28px',
   fontWeight: 600,
   lineHeight: 1,

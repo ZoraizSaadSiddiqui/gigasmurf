@@ -18,7 +18,7 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               className="text-white text-decoration-none"
-              style={{ fontFamily: 'Poppins', fontSize: '18px', fontWeight: 500, lineHeight: '100%', letterSpacing: '0%' }}
+              style={{ fontSize: '18px', fontWeight: 500, lineHeight: '100%', letterSpacing: '0%' }}
             >
               {link.label}
             </a>

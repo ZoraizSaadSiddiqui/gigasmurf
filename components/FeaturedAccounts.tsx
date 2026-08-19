@@ -29,7 +29,6 @@ const headerStyle: CSSProperties = {
 
 const titleStyle: CSSProperties = {
   color: '#fff',
-  fontFamily: 'Manrope',
   fontSize: '42px',
   fontWeight: 700,
   lineHeight: 1,
@@ -43,7 +42,6 @@ const seeAllStyle: CSSProperties = {
   border: 0,
   background: 'transparent',
   color: '#a023ec',
-  fontFamily: 'Manrope',
   fontSize: '18px',
   fontWeight: 700,
   lineHeight: '30px',

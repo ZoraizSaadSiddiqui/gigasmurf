@@ -15,7 +15,6 @@ const titleStyle: CSSProperties = {
   height: 'auto',
   margin: 0,
   color: '#fff',
-  fontFamily: 'Poppins',
   fontSize: '42px',
   fontWeight: 700,
   lineHeight: 1,
