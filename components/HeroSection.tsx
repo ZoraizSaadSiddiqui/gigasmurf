@@ -105,24 +105,33 @@ const categoryButtonStyle: CSSProperties = {
   cursor: 'default',
 };
 
-function SearchIcon() {
-  return <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="M20 20 16.2 16.2" /></svg>;
+function SearchIcon({ color = 'currentColor' }) {
+  return <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="M20 20 16.2 16.2" /></svg>;
 }
 
-function UserIcon() {
-  return <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><circle cx="12" cy="7" r="4" /><path d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7" /></svg>;
+function UserIcon({ color = 'currentColor' }) {
+  return <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" aria-hidden="true"><circle cx="12" cy="7" r="4" /><path d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7" /></svg>;
 }
 
-function LightningIcon() {
-  return <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" /></svg>;
+function LightningIcon({ color = 'currentColor' }) {
+  return <svg width="16" height="16" viewBox="0 0 24 24" fill={color} stroke={color} strokeWidth="2" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" /></svg>;
 }
 
 export default function HeroSection() {
   const { hero } = siteContent;
   const [searchValue, setSearchValue] = useState('');
+  const [hoveredTab, setHoveredTab] = useState<number | null>(null);
 
   return (
     <section className="text-center position-relative overflow-hidden py-5 d-flex align-items-center justify-content-center" style={heroSectionStyle}>
+      <style>{`
+        .hero-tab-button {
+          transition: background-color 0.25s ease;
+        }
+        .hero-tab-button:hover {
+          background-color: rgba(160, 35, 236, 1) !important;
+        }
+      `}</style>
       <div className="mx-auto d-flex flex-column align-items-center justify-content-center" style={heroContentStyle}>
         <div className="mx-auto">
           <div className="d-flex justify-content-center mb-4">
@@ -150,8 +159,28 @@ export default function HeroSection() {
         </div>
 
         <div className="d-flex justify-content-center align-items-center flex-wrap mx-auto mb-5" style={heroTabsStyle}>
-          <button type="button" className="d-inline-flex align-items-center justify-content-center" style={heroTabStyle}><UserIcon /><span>{hero.tabs[0]}</span></button>
-          <button type="button" className="d-inline-flex align-items-center justify-content-center" style={heroTabStyle}><span style={{ color: '#A023EC' }}><LightningIcon /></span><span>{hero.tabs[1]}</span></button>
+          <button 
+            type="button" 
+            className="hero-tab-button d-inline-flex align-items-center justify-content-center" 
+            style={heroTabStyle}
+            onMouseEnter={() => setHoveredTab(0)}
+            onMouseLeave={() => setHoveredTab(null)}
+          >
+            <UserIcon color={hoveredTab === 0 ? '#FFFFFF' : '#A023EC'} />
+            <span>{hero.tabs[0]}</span>
+          </button>
+          <button 
+            type="button" 
+            className="hero-tab-button d-inline-flex align-items-center justify-content-center" 
+            style={heroTabStyle}
+            onMouseEnter={() => setHoveredTab(1)}
+            onMouseLeave={() => setHoveredTab(null)}
+          >
+            <span style={{ color: hoveredTab === 1 ? '#FFFFFF' : '#A023EC' }}>
+              <LightningIcon color={hoveredTab === 1 ? '#FFFFFF' : '#A023EC'} />
+            </span>
+            <span>{hero.tabs[1]}</span>
+          </button>
         </div>
 
         <div className="d-flex justify-content-center align-items-center flex-wrap mx-auto" style={categoriesStyle}>

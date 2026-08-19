@@ -1,53 +1,259 @@
+'use client';
+import React from 'react';
+
+const InstagramIcon = () => (
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" />
+    <circle cx="12" cy="12" r="4.5" />
+    <circle cx="17.6" cy="6.4" r="0.6" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const FacebookIcon = () => (
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+  </svg>
+);
+
+const LinkedinIcon = () => (
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect x="2" y="9" width="4" height="12" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
+const ArrowUpIcon = () => (
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 19V5" />
+    <path d="M6 11l6-6 6 6" />
+  </svg>
+);
+
 export default function Footer() {
+  const linkStyle = {
+    fontFamily: 'Manrope, sans-serif',
+    fontWeight: 400,
+    fontSize: '18px',
+    lineHeight: '1.5',
+    color: 'rgba(245,247,250,1)',
+    textDecoration: 'none',
+  };
+
+  const headingStyle = {
+    fontFamily: 'Manrope, sans-serif',
+    fontWeight: 600,
+    fontSize: '24px',
+    lineHeight: '1.3',
+    letterSpacing: '0%',
+    color: '#ffffff',
+    width: '150px',
+    height: 'auto',
+    margin: 0,
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className="py-5" style={{ backgroundColor: '#0D0420' }}>
-      <div className="container">
-        <div className="card card-dark p-4 p-md-5" style={{ borderRadius: '20px' }}>
-          <div className="row">
-            <div className="col-lg-4 mb-4 mb-lg-0">
-              <div className="font-heading text-white fw-bold fs-4 mb-2">Gigas<span className="text-purple">murf</span></div>
-              <p className="text-white-50 small mb-3" style={{ maxWidth: '220px', lineHeight: '1.7' }}>The ultimate secure marketplace for gamers to buy, sell, and boost. Built for the community, powered by trust.</p>
-              <div className="d-flex gap-2">
-                <div className="rounded-circle bg-white bg-opacity-10 text-white-50 d-flex align-items-center justify-content-center cursor-pointer hover-purple" style={{ width: 32, height: 32, fontSize: 13 }}>𝕏</div>
-                <div className="rounded-circle bg-white bg-opacity-10 text-white-50 d-flex align-items-center justify-content-center cursor-pointer hover-purple" style={{ width: 32, height: 32, fontSize: 13 }}>f</div>
-                <div className="rounded-circle bg-white bg-opacity-10 text-white-50 d-flex align-items-center justify-content-center cursor-pointer hover-purple" style={{ width: 32, height: 32, fontSize: 13 }}>in</div>
+    <footer style={{ backgroundColor: '#0D0420', padding: '40px 0' }}>
+      <style>{`
+        /* Social icons — large circles matching Figma */
+        .footer-social-icon {
+          width: 72px;
+          height: 72px;
+          border-radius: 50%;
+          border: 1px solid rgba(217,217,217,0.2);
+          background: rgba(217,217,217,0.12);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #ffffff;
+          cursor: pointer;
+          text-decoration: none;
+          transition: background 0.25s ease, border-color 0.25s ease;
+        }
+        .footer-social-icon:hover {
+          background: rgba(160,35,236,1);
+          border-color: rgba(160,35,236,1);
+        }
+
+        /* Back-to-top button */
+        .footer-back-to-top {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          border: 1px solid rgba(160,35,236,1);
+          background: transparent;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: rgba(160,35,236,1);
+          cursor: pointer;
+          transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+        }
+        .footer-back-to-top:hover {
+          background: rgba(160,35,236,1);
+          color: #ffffff;
+        }
+      `}</style>
+
+      <div className="container" style={{ maxWidth: '1290px' }}>
+        <div
+          style={{
+            position: 'relative',
+            width: '100%',
+            maxWidth: '1230px',
+            margin: '0 auto',
+            borderRadius: '40px',
+            border: '1px solid rgba(207,194,214,0.2)',
+            background: 'rgba(45,16,57,0.3)',
+            padding: '60px 49px 40px 50px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '10px',
+          }}
+        >
+          {/* top row */}
+          <div
+            style={{
+              position: 'relative',
+              display: 'flex',
+              flexDirection: 'row',
+              flexWrap: 'wrap',
+              width: '100%',
+              justifyContent: 'space-between',
+              gap: '40px',
+            }}
+          >
+            {/* logo + description + socials */}
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '24px',
+                flex: '1 1 340px',
+                maxWidth: '340.39px',
+              }}
+            >
+              <img
+                src="/logo.png"
+                alt="Gigasmurf"
+                style={{ width: '185.8px', height: '55.29px', objectFit: 'contain', opacity: 1 }}
+              />
+
+              <p
+                style={{
+                  fontFamily: 'Manrope, sans-serif',
+                  fontWeight: 400,
+                  fontSize: '18px',
+                  lineHeight: '1.5',
+                  letterSpacing: '0%',
+                  color: 'rgba(245,247,250,1)',
+                  width: '340.39px',
+                  maxWidth: '100%',
+                  margin: 0,
+                }}
+              >
+                The ultimate secure marketplace for gamers to buy, sell, and
+                boost. Built for the community, powered by trust.
+              </p>
+
+              {/* Larger social icons matching Figma */}
+              <div style={{ display: 'flex', flexDirection: 'row', gap: '16px' }}>
+                <a href="#" className="footer-social-icon" aria-label="Instagram">
+                  <InstagramIcon />
+                </a>
+                <a href="#" className="footer-social-icon" aria-label="Facebook">
+                  <FacebookIcon />
+                </a>
+                <a href="#" className="footer-social-icon" aria-label="LinkedIn">
+                  <LinkedinIcon />
+                </a>
               </div>
             </div>
 
-            <div className="col-lg-2 col-md-4 mb-4 mb-md-0">
-              <h6 className="font-heading text-white fw-bold mb-3">Marketplace</h6>
-              <ul className="list-unstyled mb-0 d-flex flex-column gap-2">
-                <li><a href="#" className="text-white-50 small text-decoration-none hover-purple">Browse Accounts</a></li>
-                <li><a href="#" className="text-white-50 small text-decoration-none hover-purple">Rank Boosting</a></li>
-                <li><a href="#" className="text-white-50 small text-decoration-none hover-purple">Top Sellers</a></li>
-                <li><a href="#" className="text-white-50 small text-decoration-none hover-purple">About Us</a></li>
-              </ul>
+            {/* link columns */}
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+                gap: '80px',
+              }}
+            >
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', width: '163px' }}>
+                <h6 style={headingStyle}>Marketplace</h6>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>Browse Accounts</a>
+                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>Rank Boosting</a>
+                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>Top Sellers</a>
+                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>About Us</a>
+                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>Insurance</a>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', width: '163px' }}>
+                <h6 style={headingStyle}>Top Games</h6>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>Valorant</a>
+                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>League of Legends</a>
+                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>Fortnite</a>
+                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>Overwatch 2</a>
+                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>CS2</a>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', width: '163px' }}>
+                <h6 style={{ ...headingStyle, width: 'auto', whiteSpace: 'nowrap' }}>Support &amp; Legal</h6>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>Privacy Policy</a>
+                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>Terms &amp; use</a>
+                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>Help Center</a>
+                </div>
+              </div>
             </div>
 
-            <div className="col-lg-2 col-md-4 mb-4 mb-md-0">
-              <h6 className="font-heading text-white fw-bold mb-3">Top Games</h6>
-              <ul className="list-unstyled mb-0 d-flex flex-column gap-2">
-                <li><a href="#" className="text-white-50 small text-decoration-none hover-purple">Valorant</a></li>
-                <li><a href="#" className="text-white-50 small text-decoration-none hover-purple">League of Legends</a></li>
-                <li><a href="#" className="text-white-50 small text-decoration-none hover-purple">Fortnite</a></li>
-                <li><a href="#" className="text-white-50 small text-decoration-none hover-purple">Overwatch 2</a></li>
-                <li><a href="#" className="text-white-50 small text-decoration-none hover-purple">CS2</a></li>
-              </ul>
-            </div>
-
-            <div className="col-lg-2 col-md-4">
-              <h6 className="font-heading text-white fw-bold mb-3">Support & Legal</h6>
-              <ul className="list-unstyled mb-0 d-flex flex-column gap-2">
-                <li><a href="#" className="text-white-50 small text-decoration-none hover-purple">Privacy Policy</a></li>
-                <li><a href="#" className="text-white-50 small text-decoration-none hover-purple">Terms & use</a></li>
-                <li><a href="#" className="text-white-50 small text-decoration-none hover-purple">Help Center</a></li>
-              </ul>
-            </div>
+            {/* back to top — bottom-right of top row */}
+            <button
+              onClick={scrollToTop}
+              aria-label="Back to top"
+              className="footer-back-to-top"
+              style={{
+                position: 'absolute',
+                right: 0,
+                bottom: 0,
+              }}
+            >
+              <ArrowUpIcon />
+            </button>
           </div>
 
-          <div className="text-center pt-4 mt-4 border-top border-secondary border-opacity-10 text-white-50 small">
+          {/* divider */}
+          <div
+            style={{
+              width: '100%',
+              maxWidth: '1120px',
+              margin: '30px auto 0',
+              borderTop: '1px solid rgba(207,194,214,0.2)',
+            }}
+          />
+
+          {/* copyright */}
+          <p
+            style={{
+              fontFamily: 'Manrope, sans-serif',
+              fontWeight: 400,
+              fontSize: '16px',
+              lineHeight: '1.5',
+              color: 'rgba(245,247,250,0.7)',
+              textAlign: 'center',
+              margin: '20px 0 0',
+            }}
+          >
             Copyright © 2026 Gigasmurf. All rights reserved.
-          </div>
+          </p>
         </div>
       </div>
     </footer>
