@@ -1,6 +1,7 @@
 import Image from 'next/image';
+import type { AccountData } from '@/content/site-content';
 
-export interface AccountData { id: number; name: string; desc: string; seller: string; rating: string; price: string; image: string; }
+export type { AccountData } from '@/content/site-content';
 export interface AccountCardProps { acc: AccountData; }
 
 export default function AccountCard({ acc }: AccountCardProps) {

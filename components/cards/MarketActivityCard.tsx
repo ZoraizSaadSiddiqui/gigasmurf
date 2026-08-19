@@ -1,15 +1,7 @@
 import { GameIcon } from './GameIcons';
+import type { MarketActivityItem } from '@/content/site-content';
 
-export interface MarketActivityItem {
-  id: number;
-  name: string;
-  sub?: string;
-  price: string;
-  time: string;
-  status?: string;
-  icon?: string;
-  iconClass?: string;
-}
+export type { MarketActivityItem } from '@/content/site-content';
 
 interface MarketActivityCardProps {
   item: MarketActivityItem;

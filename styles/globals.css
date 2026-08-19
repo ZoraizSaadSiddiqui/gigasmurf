@@ -685,6 +685,7 @@ main > footer {
 
 /* Marketplace cards: shared Figma glass surface for all three cards. */
 .live-activity-cards-row .market-widget-card {
+  position: relative;
   border-width: 2px 0;
   border-style: solid;
   border-color: #a023ec;
@@ -696,6 +697,19 @@ main > footer {
   );
   backdrop-filter: blur(28.64761734008789px);
   -webkit-backdrop-filter: blur(28.64761734008789px);
+}
+
+/* Figma's 1px horizontal highlight sits 3px above each marketplace frame. */
+.live-activity-cards-row .market-widget-card::before {
+  position: absolute;
+  z-index: 1;
+  top: -3px;
+  left: 1px;
+  width: calc(100% - 2px);
+  height: 1px;
+  content: '';
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, 0) 100%);
 }
 
 /* Figma desktop layout: Bootstrap's flex helpers still control alignment. */

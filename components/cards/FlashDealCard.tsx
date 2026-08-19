@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { siteContent } from '@/content/site-content';
 
 interface TimeState {
   h: number;
@@ -10,6 +11,7 @@ interface TimeState {
 }
 
 export default function FlashDealCard() {
+  const { flashDeal } = siteContent.marketplace;
   const [time, setTime] = useState<TimeState>({
     h: 1,
     m: 42,
@@ -49,20 +51,20 @@ export default function FlashDealCard() {
   return (
     <div className="market-widget-card card h-100 flash-deal-card">
       <div className="flash-deal-card__header d-flex align-items-center justify-content-between">
-        <h5 className="market-widget-card__title">Flash Deal</h5>
-        <span className="badge rounded-pill flash-deal-badge">-40%</span>
+        <h5 className="market-widget-card__title">{flashDeal.title}</h5>
+        <span className="badge rounded-pill flash-deal-badge">{flashDeal.discount}</span>
       </div>
 
       <div className="flash-deal-card__content d-flex flex-column align-items-center">
         <Image
-          src="/boy.jpg"
-          alt="Flash deal gaming offer"
+          src={flashDeal.image}
+          alt={flashDeal.title}
           width={106}
           height={100}
           className="flash-deal-image"
         />
         <p className="flash-deal-card__description mb-0">
-          Unlock Mythic Valorant Skins for <span>40% OFF</span>. Limited slots left.
+          {flashDeal.description}<span>{flashDeal.emphasis}</span>{flashDeal.suffix}
         </p>
       </div>
 
@@ -75,7 +77,7 @@ export default function FlashDealCard() {
       </div>
 
       <button className="btn btn-purple flash-deal-card__button rounded-pill d-flex align-items-center justify-content-center gap-2">
-        Grab Deal
+        {flashDeal.cta}
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <polyline points="9 18 15 12 9 6" />
         </svg>
