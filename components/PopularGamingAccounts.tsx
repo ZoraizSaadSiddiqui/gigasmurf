@@ -1,5 +1,8 @@
+ 'use client';
+
 import Image from 'next/image';
 import type { CSSProperties } from 'react';
+import { useState } from 'react';
 import { siteContent } from '@/content/site-content';
 
 type PopularGame = (typeof siteContent.popularGamingAccounts)[number];
@@ -40,21 +43,21 @@ const controlsStyle: CSSProperties = {
   gap: '16px',
 };
 
-const getControlButtonStyle = (isActive: boolean): CSSProperties => ({
+const controlButtonStyle: CSSProperties = {
   appearance: 'none',
   boxSizing: 'border-box',
   width: '40px',
   height: '40px',
   padding: 0,
-  border: isActive ? '2px solid rgba(255, 255, 255, .2)' : '1px solid rgba(160, 35, 236, .2)',
+  border: '1px solid rgba(160, 35, 236, .2)',
   borderRadius: '9999px',
-  background: isActive ? '#a023ec' : 'transparent',
+  background: 'transparent',
   color: '#fff',
   fontFamily: 'Arial, sans-serif',
   fontSize: '25px',
   lineHeight: '34px',
   cursor: 'pointer',
-});
+};
 
 const cardsStyle: CSSProperties = {
   width: '1229.16px',
@@ -179,6 +182,15 @@ function PopularGameCard({ game }: { game: PopularGame }) {
 
 export default function PopularGamingAccounts() {
   const { popularGamingAccountsSection } = siteContent;
+  const games = siteContent.popularGamingAccounts;
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const moveSlider = (direction: 1 | -1) => {
+    setActiveIndex((currentIndex) => (currentIndex + direction + games.length) % games.length);
+  };
+
+  const visibleGames = games.map((_, index) => games[(index + activeIndex) % games.length]);
+
   return (
     <>
       <section data-popular-gaming-section style={sectionStyle}>
@@ -186,13 +198,13 @@ export default function PopularGamingAccounts() {
           <div style={headerStyle}>
             <h3 data-popular-gaming-title style={titleStyle}>{popularGamingAccountsSection.title} <span style={{ color: '#a023ec' }}>{popularGamingAccountsSection.accentTitle}</span></h3>
             <div data-popular-gaming-controls style={controlsStyle}>
-              <button data-popular-gaming-control type="button" aria-label="Previous popular game" style={getControlButtonStyle(false)}>&lsaquo;</button>
-              <button data-popular-gaming-control type="button" aria-label="Next popular game" style={getControlButtonStyle(true)}>&rsaquo;</button>
+              <button data-popular-gaming-control type="button" aria-label="Previous popular game" onClick={() => moveSlider(-1)} className="slider-navigation-button" style={controlButtonStyle}>&lsaquo;</button>
+              <button data-popular-gaming-control type="button" aria-label="Next popular game" onClick={() => moveSlider(1)} className="slider-navigation-button" style={controlButtonStyle}>&rsaquo;</button>
             </div>
           </div>
 
           <div data-popular-gaming-cards style={cardsStyle}>
-            {siteContent.popularGamingAccounts.map((game) => <PopularGameCard key={game.id} game={game} />)}
+            {visibleGames.map((game) => <PopularGameCard key={game.id} game={game} />)}
           </div>
         </div>
       </section>

@@ -26,6 +26,31 @@ main > footer {
   background: #a023ec !important;
 }
 
+.account-buy-button:hover,
+.account-buy-button:focus-visible {
+  background: rgba(160, 35, 236, 1) !important;
+  color: #ffffff !important;
+}
+
+.slider-navigation-button:hover,
+.slider-navigation-button:focus-visible {
+  border-color: #a023ec !important;
+  background: rgba(160, 35, 236, 1) !important;
+  color: #ffffff !important;
+}
+
+.sell-button:hover,
+.sell-button:focus-visible,
+.see-all-button:hover,
+.see-all-button:focus-visible {
+  background: rgba(160, 35, 236, 1) !important;
+  color: #ffffff !important;
+}
+
+[data-top-rated-boosting-search-input]::-webkit-search-cancel-button {
+  appearance: none;
+}
+
 .footer-social-icon {
   width: 72px;
   height: 72px;
@@ -73,7 +98,7 @@ main > footer {
 [data-top-rated-boosting-search-input]::placeholder { color: rgba(255, 255, 255, .5); }
 [data-top-rated-boosting-search-input]:focus { background: transparent; color: #fff; box-shadow: none; }
 [data-top-rated-boosting-filter-button]:hover,
-[data-top-rated-boosting-filter-button]:focus-visible { border-color: #a023ec; background: #a023ec; color: #fff; }
+[data-top-rated-boosting-filter-button]:focus-visible { border-color: #a023ec !important; background: #a023ec !important; color: #fff !important; }
 
 @media (max-width: 1239.98px) {
   [data-top-rated-boosting-container] { width: 100% !important; min-height: auto !important; padding-right: 24px !important; padding-left: 24px !important; }

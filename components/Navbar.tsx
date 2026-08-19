@@ -49,8 +49,8 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="btn rounded-pill px-4 py-2"
-            style={{ backgroundColor: '#A023EC', borderColor: '#A023EC', color: '#FFFFFF' }}
+            className="btn sell-button rounded-pill px-4 py-2"
+            style={{ backgroundColor: 'transparent', borderColor: '#A023EC', color: '#FFFFFF' }}
           >
             {navigation.sellLabel}
           </button>

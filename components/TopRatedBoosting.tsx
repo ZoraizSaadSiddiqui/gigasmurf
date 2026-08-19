@@ -67,7 +67,7 @@ const filterButtonStyle: CSSProperties = {
   gap: '8px',
   border: '2px solid #a023ec',
   borderRadius: '105px',
-  background: '#a023ec',
+  background: 'transparent',
   color: '#fff',
   fontFamily: "'Manrope', sans-serif",
   fontSize: '20px',
@@ -111,6 +111,7 @@ const sellAllButtonStyle: CSSProperties = {
   fontSize: '18px',
   fontWeight: 700,
   lineHeight: '30px',
+  whiteSpace: 'nowrap',
 };
 
 const sellAllArrowStyle: CSSProperties = {
@@ -153,7 +154,7 @@ export default function TopRatedBoosting() {
 
           <div className="d-flex justify-content-center" style={sellAllWrapperStyle}>
             <button type="button" className="btn d-inline-flex align-items-center justify-content-center" style={sellAllButtonStyle}>
-              <span>{boosting.sellAllLabel}</span>
+              <span style={{ flexShrink: 0 }}>{boosting.sellAllLabel}</span>
               <svg style={sellAllArrowStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><polyline points="9 18 15 12 9 6" /></svg>
             </button>
           </div>
