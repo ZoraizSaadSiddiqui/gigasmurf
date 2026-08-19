@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import type { CSSProperties } from 'react';
 
 export interface BoostingServiceData {
   id: number;
@@ -12,25 +13,120 @@ export interface BoostingCardProps {
   svc: BoostingServiceData;
 }
 
+const cardStyle: CSSProperties = {
+  width: '285px',
+  height: '366px',
+  margin: 0,
+  padding: '8px 16px',
+  overflow: 'hidden',
+  border: '1px solid rgba(160, 35, 236, .2)',
+  borderRadius: '16px',
+  background: 'rgba(26, 11, 46, .6)',
+  color: '#fff',
+};
+
+const imageContainerStyle: CSSProperties = {
+  width: '252px',
+  height: '192px',
+  flex: '0 0 192px',
+  overflow: 'hidden',
+  borderRadius: '12px',
+  background: '#12052d',
+};
+
+const imageStyle: CSSProperties = {
+  objectFit: 'cover',
+};
+
+const bodyStyle: CSSProperties = {
+  width: '252px',
+  height: '156px',
+  padding: '16px 0',
+  color: '#fff',
+};
+
+const titleStyle: CSSProperties = {
+  margin: '0 0 8px',
+  color: '#fff',
+  fontFamily: "'Manrope', sans-serif",
+  fontSize: '18px',
+  fontWeight: 600,
+  lineHeight: '25px',
+};
+
+const detailsStyle: CSSProperties = {
+  paddingBottom: '12px',
+  borderBottom: '1px solid rgba(207, 194, 214, .2)',
+};
+
+const detailRowStyle: CSSProperties = {
+  height: '19px',
+  color: '#cfc2d6',
+  fontFamily: "'Manrope', sans-serif",
+  fontSize: '14px',
+  fontWeight: 400,
+  lineHeight: '19px',
+};
+
+const detailValueStyle: CSSProperties = {
+  color: '#fff',
+  fontWeight: 500,
+};
+
+const sellerStyle: CSSProperties = {
+  height: '24px',
+  marginTop: 'auto',
+  color: '#fff',
+  fontFamily: "'Manrope', sans-serif",
+  fontSize: '14px',
+  fontWeight: 600,
+  lineHeight: '20px',
+};
+
+const sellerDetailsStyle: CSSProperties = {
+  gap: '8px',
+};
+
+const sellerAvatarStyle: CSSProperties = {
+  width: '24px',
+  height: '24px',
+  overflow: 'hidden',
+  border: '.5px solid rgba(207, 194, 214, .2)',
+  borderRadius: '12px',
+};
+
+const verifiedStyle: CSSProperties = {
+  width: '12px',
+  height: '12px',
+  color: '#22c55e',
+};
+
+const ratingStyle: CSSProperties = {
+  color: '#fff',
+  fontSize: '12px',
+  fontWeight: 500,
+  lineHeight: '16px',
+};
+
 export default function BoostingCard({ svc }: BoostingCardProps) {
   return (
-    <article className="boosting-card card h-100">
-      <div className="boosting-card__image position-relative">
-        <Image src={svc.image} alt={svc.name} fill sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 252px" />
+    <article className="card h-100" style={cardStyle}>
+      <div className="position-relative" style={imageContainerStyle}>
+        <Image src={svc.image} alt={svc.name} fill sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 252px" style={imageStyle} />
       </div>
-      <div className="boosting-card__body card-body d-flex flex-column">
-        <h3 className="boosting-card__title">{svc.name}</h3>
-        <div className="boosting-card__details">
-          <div className="d-flex justify-content-between"><span>Max Level</span><strong>{svc.maxLevel}</strong></div>
-          <div className="d-flex justify-content-between"><span>Starting price</span><strong>{svc.startingPrice}</strong></div>
+      <div className="card-body d-flex flex-column" style={bodyStyle}>
+        <h3 style={titleStyle}>{svc.name}</h3>
+        <div style={detailsStyle}>
+          <div className="d-flex justify-content-between" style={detailRowStyle}><span>Max Level</span><strong style={detailValueStyle}>{svc.maxLevel}</strong></div>
+          <div className="d-flex justify-content-between" style={detailRowStyle}><span>Starting price</span><strong style={detailValueStyle}>{svc.startingPrice}</strong></div>
         </div>
-        <div className="boosting-card__seller d-flex align-items-center justify-content-between">
-          <div className="d-flex align-items-center">
-            <span className="boosting-card__seller-avatar position-relative"><Image src="/boy.jpg" alt="AceTrader" fill sizes="24px" /></span>
+        <div className="d-flex align-items-center justify-content-between" style={sellerStyle}>
+          <div className="d-flex align-items-center" style={sellerDetailsStyle}>
+            <span className="position-relative" style={sellerAvatarStyle}><Image src="/boy.jpg" alt="AceTrader" fill sizes="24px" style={imageStyle} /></span>
             <span>AceTrader</span>
-            <svg className="boosting-card__verified" viewBox="0 0 12 12" aria-label="Verified seller"><path fill="currentColor" d="M6 0l1.3 1.2 1.8-.1.7 1.6 1.5 1-.5 1.7.5 1.7-1.5 1-.7 1.6-1.8-.1L6 12 4.7 10.8l-1.8.1-.7-1.6-1.5-1 .5-1.7-.5-1.7 1.5-1 .7-1.6 1.8.1L6 0z" /><path d="M3.55 6.12l1.53 1.52 3.36-3.35" fill="none" stroke="#11072d" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            <svg style={verifiedStyle} viewBox="0 0 12 12" aria-label="Verified seller"><path fill="currentColor" d="M6 0l1.3 1.2 1.8-.1.7 1.6 1.5 1-.5 1.7.5 1.7-1.5 1-.7 1.6-1.8-.1L6 12 4.7 10.8l-1.8.1-.7-1.6-1.5-1 .5-1.7-.5-1.7 1.5-1 .7-1.6 1.8.1L6 0z" /><path d="M3.55 6.12l1.53 1.52 3.36-3.35" fill="none" stroke="#11072d" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </div>
-          <span className="boosting-card__rating"><span>&#9733;</span> 4.9</span>
+          <span style={ratingStyle}><span style={{ color: '#a023ec' }}>&#9733;</span> 4.9</span>
         </div>
       </div>
     </article>

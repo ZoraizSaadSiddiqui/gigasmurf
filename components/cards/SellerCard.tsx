@@ -16,7 +16,14 @@ export interface SellerCardProps {
 
 export default function SellerCard({ seller }: SellerCardProps) {
   return (
-    <div className={`card card-dark p-3 text-center ${seller.featured ? 'seller-card-featured' : ''}`} style={{ minWidth: '180px' }}>
+    <>
+      <style>{`
+        @keyframes seller-card-live-pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.3; }
+        }
+      `}</style>
+      <div className={`card card-dark p-3 text-center ${seller.featured ? 'seller-card-featured' : ''}`} style={{ minWidth: '180px' }}>
       <div
         className="w-100 rounded-3 d-flex align-items-center justify-content-center mb-3"
         style={{ background: seller.bg, height: '120px', fontSize: '48px' }}
@@ -24,7 +31,7 @@ export default function SellerCard({ seller }: SellerCardProps) {
         {seller.emoji}
       </div>
       <div className="font-heading text-white fw-bold fs-6 mb-1 d-flex align-items-center justify-content-center gap-1">
-        {seller.name} <span className="badge-live" style={{ width: 6, height: 6 }} />
+        {seller.name} <span style={{ width: 6, height: 6, minWidth: '8px', borderRadius: '50%', backgroundColor: '#22c55e', display: 'inline-block', animation: 'seller-card-live-pulse 1.5s ease-in-out infinite' }} />
       </div>
       {seller.featured && (
         <>
@@ -47,6 +54,7 @@ export default function SellerCard({ seller }: SellerCardProps) {
           </div>
         </>
       )}
-    </div>
+      </div>
+    </>
   );
 }
