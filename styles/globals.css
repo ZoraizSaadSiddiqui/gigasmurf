@@ -236,61 +236,13 @@ main > footer {
     min-width: 140px;
   }
 }
-
-/* .Live-Activity {
-  width: 1230px;
-  height: 644px;
-  padding-top: 50px;
-  padding-bottom: 70px;
-  gap: 56px;
-  opacity: 1;
-
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-}
-.marketplace-title {
-  width: 1230px;
-  height: 57px;
-
-  margin: 0 auto;
-  padding: 0;
-
-  font-family: 'Manrope', sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 42px;
-  line-height: 100%;
-  letter-spacing: 0;
-  text-align: center;
-  vertical-align: middle;
-
-  color: #ffffff;
-  opacity: 1;
-}
-
-.marketplace-title span {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 700;
-  font-size: 42px;
-  line-height: 100%;
-  letter-spacing: 0;
-
-  color: rgba(160, 35, 236, 1);
-}
-
-@media (max-width: 1230px) {
-  .Live-Activity {
-    width: 100%;
-    height: auto;
-  }
-} *//* ===================================================
+ /* ===================================================
    Live Market Widget Floating Section (Card Wrapper)
    Flow: Vertical | W: 448px Fixed | H: 411px Hug
    Max-width: 448px | Radius: 30px | Padding: 32px | Gap: 24px
    Border: 2px 0px 2px 0px  rgba(160, 35, 236, 1)
    BG: Linear Gradient rgba(255,255,255,0.1) → rgba(255,255,255,0.05)
-   Backdrop-blur: 28.65px
+   Backdrop-lur: 28.65px
 =================================================== */
 
 .market-widget-card {
@@ -647,21 +599,6 @@ main > footer {
   align-items: center;
 }
 
-@media (max-width: 1230px) {
-  .live-activity-section { padding-right: 24px; padding-left: 24px; }
-  .live-activity-cards-row { height: auto; flex-wrap: wrap; }
-  .live-market-card, .live-market-card--flash { flex: 1 1 min(448px, 100%); width: auto; }
-  .market-widget-card { width: 100%; max-width: none; }
-}
-
-@media (max-width: 576px) {
-  .live-activity-section { padding: 40px 16px 56px; gap: 36px; }
-  .marketplace-title, .marketplace-title span, .marketplace-title__accent { font-size: 32px; }
-  .live-activity-cards-row { gap: 16px !important; }
-  .market-widget-card { height: auto; min-height: 411px; padding: 24px; }
-  .market-activity-item { padding-right: 12px; padding-left: 12px; }
-  .market-activity-item__name { max-width: 170px; overflow: hidden; text-overflow: ellipsis; }
-}
 
 /* Third card — exact supplied box model. */
 .live-market-card--flash {
@@ -811,15 +748,7 @@ main > footer {
   box-shadow: none;
 }
 
-@media (max-width: 1230px) {
-  .live-activity-section { width: min(1230px, 100%); }
-  .live-activity-cards-row { height: auto; flex-wrap: wrap; }
-  .live-market-card,
-  .live-market-card--flash { flex: 1 1 min(448px, 100%); width: auto; }
-  .live-market-card--flash .market-widget-card { width: 100%; max-width: none; }
-}
 
-/* Daily Featured Accounts — Figma frame using Bootstrap's grid and controls. */
 .featured-accounts-section {
   width: 1230px;
   height: 650px;
@@ -1033,13 +962,15 @@ main > footer {
   transition: background-color .2s ease, color .2s ease, box-shadow .2s ease;
 }
 .account-card__buy span { color: currentColor; }
-.account-card:hover .account-card__buy,
-.account-card__buy:hover {
+.account-card__buy:hover,
+.account-card__buy:active,
+.account-card__buy:focus,
+.account-card__buy:focus-visible {
   background: #a023ec !important;
   color: #fff !important;
   box-shadow: 0 4px 16px rgba(160, 35, 236, .38);
 }
-.account-card--glowing .account-card__buy {
+.account-card--glowing .account-card__buy:not(:hover):not(:active):not(:focus):not(:focus-visible) {
   background: transparent !important;
   color: #a023ec !important;
   box-shadow: none;
