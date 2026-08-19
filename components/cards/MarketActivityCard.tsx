@@ -19,12 +19,12 @@ const activityRowStyle: CSSProperties = {
   background: 'rgba(255, 255, 255, 0.1)',
 };
 
-const activityLeftStyle: CSSProperties = { minWidth: 0, gap: '12px' };
-const activityTextStyle: CSSProperties = { minWidth: 0, gap: '4px' };
-const activityNameStyle: CSSProperties = { margin: 0, color: '#fff', fontSize: '14px', fontWeight: 600, lineHeight: 1, whiteSpace: 'nowrap' };
-const activitySubStyle: CSSProperties = { margin: 0, color: '#cfc2d6', fontSize: '12px', fontWeight: 400, lineHeight: 1, letterSpacing: '.5px' };
+const activityLeftStyle: CSSProperties = { flex: 1, minWidth: 0, gap: '12px', overflow: 'hidden' };
+const activityTextStyle: CSSProperties = { flex: 1, minWidth: 0, gap: '4px', overflow: 'hidden' };
+const activityNameStyle: CSSProperties = { margin: 0, color: '#fff', fontSize: '14px', fontWeight: 600, lineHeight: 1, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' };
+const activitySubStyle: CSSProperties = { margin: 0, color: '#cfc2d6', fontSize: '12px', fontWeight: 400, lineHeight: 1, letterSpacing: '.5px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' };
 const soldLabelStyle: CSSProperties = { marginRight: '4px', color: '#22c55e', fontSize: '12px', fontWeight: 600, lineHeight: 1, letterSpacing: '.5px' };
-const priceStyle: CSSProperties = { flexShrink: 0, color: '#fff', fontSize: '14px', fontWeight: 700, lineHeight: 1, whiteSpace: 'nowrap' };
+const priceStyle: CSSProperties = { flexShrink: 0, marginLeft: '8px', color: '#fff', fontSize: '14px', fontWeight: 700, lineHeight: 1, whiteSpace: 'nowrap' };
 
 export default function MarketActivityCard({ item, isSold = false }: MarketActivityCardProps) {
   return (

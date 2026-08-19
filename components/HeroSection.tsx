@@ -141,7 +141,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className="d-flex align-items-center justify-content-center flex-wrap mx-auto mb-4" style={popularContainerStyle}>
+          <div data-hero-popular className="d-flex align-items-center justify-content-center flex-wrap mx-auto mb-4" style={popularContainerStyle}>
             <span className="text-white-50 small">{hero.popularLabel}</span>
             {hero.popularTags.map((tag) => <button key={tag} type="button" className="d-inline-flex align-items-center justify-content-center" style={popularTagStyle}>{tag}</button>)}
           </div>

@@ -4,10 +4,11 @@ html,
 body,
 main {
   background-color: #11072d !important;
+  overflow-x: hidden;
 }
 
-main > section,
-main > footer {
+main>section,
+main>footer {
   background-color: #11072d !important;
 }
 
@@ -92,45 +93,259 @@ main > footer {
 }
 
 @keyframes seller-card-live-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
 }
 
-[data-top-rated-boosting-search-input]::placeholder { color: rgba(255, 255, 255, .5); }
-[data-top-rated-boosting-search-input]:focus { background: transparent; color: #fff; box-shadow: none; }
+[data-top-rated-boosting-search-input]::placeholder {
+  color: rgba(255, 255, 255, .5);
+}
+
+[data-top-rated-boosting-search-input]:focus {
+  background: transparent;
+  color: #fff;
+  box-shadow: none;
+}
+
 [data-top-rated-boosting-filter-button]:hover,
-[data-top-rated-boosting-filter-button]:focus-visible { border-color: #a023ec !important; background: #a023ec !important; color: #fff !important; }
+[data-top-rated-boosting-filter-button]:focus-visible {
+  border-color: #a023ec !important;
+  background: #a023ec !important;
+  color: #fff !important;
+}
 
 @media (max-width: 1239.98px) {
-  [data-top-rated-boosting-container] { width: 100% !important; min-height: auto !important; padding-right: 24px !important; padding-left: 24px !important; }
-  [data-top-rated-boosting-grid] { grid-template-columns: repeat(2, 285px) !important; width: 595px !important; }
+  [data-top-rated-boosting-container] {
+    width: 100% !important;
+    min-height: auto !important;
+    padding-right: 24px !important;
+    padding-left: 24px !important;
+  }
+
+  [data-top-rated-boosting-grid] {
+    grid-template-columns: repeat(2, 285px) !important;
+    width: 595px !important;
+  }
 }
 
 @media (max-width: 767.98px) {
-  [data-top-rated-boosting-container] { padding-right: 16px !important; padding-left: 16px !important; gap: 32px !important; }
-  [data-top-rated-boosting-title] { height: auto !important; font-size: 32px !important; }
-  [data-top-rated-boosting-filters] { height: auto !important; flex-direction: column !important; }
-  [data-top-rated-boosting-search], [data-top-rated-boosting-filter-button] { width: 100% !important; }
-  [data-top-rated-boosting-grid] { grid-template-columns: 285px !important; width: 285px !important; gap: 24px !important; }
+  [data-top-rated-boosting-container] {
+    padding-top: 40px !important;
+    padding-bottom: 48px !important;
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+    gap: 24px !important;
+    width: 100% !important;
+    min-height: auto !important;
+  }
+
+  [data-top-rated-boosting-title] {
+    width: 100% !important;
+    height: auto !important;
+    font-size: 24px !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+  }
+
+  [data-top-rated-boosting-filters] {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    margin: 0 auto 28px !important;
+  }
+
+  [data-top-rated-boosting-search] {
+    flex: 1 1 auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    height: 44px !important;
+    padding: 8px 12px !important;
+    border-radius: 100px !important;
+  }
+
+  [data-top-rated-boosting-search] svg {
+    width: 18px !important;
+    height: 18px !important;
+    flex-shrink: 0 !important;
+  }
+
+  [data-top-rated-boosting-search-input] {
+    font-size: 13px !important;
+  }
+
+  [data-top-rated-boosting-filter-button] {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    height: 44px !important;
+    padding: 8px 14px !important;
+    font-size: 13px !important;
+    border-radius: 100px !important;
+    white-space: nowrap !important;
+  }
+
+  [data-top-rated-boosting] {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  [data-top-rated-boosting-grid] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 20px !important;
+    margin: 0 !important;
+  }
+
+  [data-top-rated-boosting-grid] > div {
+    width: min(100%, 285px) !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  [data-top-rated-boosting-grid] .card {
+    width: 100% !important;
+    max-width: 285px !important;
+    box-sizing: border-box !important;
+  }
+
+  [data-top-rated-boosting-grid] .card > div,
+  [data-top-rated-boosting-grid] .card-body {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  [data-top-rated-boosting] button.btn.d-inline-flex {
+    width: 130px !important;
+    height: 44px !important;
+    padding: 8px 18px !important;
+    font-size: 14px !important;
+  }
 }
 
 @media (max-width: 1277px) and (min-width: 768px) {
-  [data-popular-gaming-section] { height: auto !important; min-height: 703px !important; }
-  [data-popular-gaming-cards] { grid-template-columns: minmax(0, 2.304fr) minmax(0, 1fr) minmax(0, 1fr) !important; gap: 16px !important; }
+  [data-popular-gaming-section] {
+    height: auto !important;
+    min-height: 703px !important;
+  }
+
+  [data-popular-gaming-cards] {
+    grid-template-columns: minmax(0, 2.304fr) minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 16px !important;
+  }
 }
 
-@media (max-width: 767px) {
-  [data-popular-gaming-section] { width: min(100% - 32px, 560px) !important; height: auto !important; min-height: 0 !important; padding: 48px 0 !important; }
-  [data-popular-gaming-inner] { gap: 24px !important; }
-  [data-popular-gaming-title] { font-size: 30px !important; }
-  [data-popular-gaming-controls] { gap: 8px !important; }
-  [data-popular-gaming-control] { width: 36px !important; height: 36px !important; }
-  [data-popular-gaming-cards] { grid-template-columns: 1fr 1fr !important; gap: 16px !important; height: auto !important; }
-  [data-popular-game-card] { height: 290px !important; }
-  [data-popular-game-card][data-popular-game-featured] { grid-column: 1 / -1 !important; }
-  [data-popular-game-title] { right: 16px !important; bottom: 16px !important; left: 16px !important; font-size: 20px !important; }
-  [data-popular-game-open] { right: 16px !important; bottom: 16px !important; width: 40px !important; height: 40px !important; }
-  [data-popular-game-side-action] { top: 16px !important; right: 16px !important; width: 40px !important; height: 40px !important; }
+@media (max-width: 767.98px) {
+  [data-popular-gaming-section] {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 40px 16px 48px !important;
+    height: auto !important;
+    overflow: hidden;
+  }
+
+  [data-popular-gaming-inner] {
+    gap: 20px !important;
+  }
+
+  [data-popular-gaming-header] {
+    height: auto !important;
+    margin-bottom: 20px !important;
+    flex-wrap: nowrap !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+  }
+
+  [data-popular-gaming-title] {
+    width: auto !important;
+    font-size: 22px !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+  }
+
+  [data-popular-gaming-controls] {
+    width: auto !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+    margin-bottom: 2px !important;
+  }
+
+  [data-popular-gaming-control] {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 16px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  [data-popular-gaming-cards] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+
+  [data-popular-game-card] {
+    height: 240px !important;
+  }
+
+  [data-popular-game-card][data-popular-game-featured] {
+    grid-column: 1 / -1 !important;
+    height: 280px !important;
+  }
+
+  [data-popular-game-card]:not([data-popular-game-featured]) [data-popular-game-title] {
+    right: 12px !important;
+    bottom: 12px !important;
+    left: 12px !important;
+    font-size: 15px !important;
+    line-height: 1.2 !important;
+  }
+
+  [data-popular-game-card][data-popular-game-featured] [data-popular-game-title] {
+    right: 16px !important;
+    bottom: 16px !important;
+    left: 16px !important;
+    font-size: 22px !important;
+    line-height: 1.2 !important;
+  }
+
+  [data-popular-game-open] {
+    right: 16px !important;
+    bottom: 16px !important;
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 18px !important;
+  }
+
+  [data-popular-game-side-action] {
+    top: 12px !important;
+    right: 12px !important;
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 16px !important;
+  }
 }
 
 @media (max-width: 1279.98px) {
@@ -179,6 +394,7 @@ main > footer {
 }
 
 @media (min-width: 1280px) and (max-width: 1439.98px) {
+
   [data-live-marketplace],
   [data-featured-accounts],
   [data-popular-gaming-section],
@@ -195,29 +411,65 @@ main > footer {
   }
 }
 
-@media (max-width: 767.98px) {
+/* Laptop Viewports & Card Internal Content Scaling (< 1440px) */
+@media (max-width: 1439.98px) {
+  [data-hero-content] {
+    width: calc(100% - 48px) !important;
+    max-width: 1230px !important;
+  }
+
+  [data-hero-search] {
+    max-width: 100% !important;
+  }
+
+  [data-account-card] {
+    max-width: 100% !important;
+  }
+
+  [data-account-card] h4 {
+    font-size: 18px !important;
+    line-height: 22px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  [data-account-card] p {
+    font-size: 13px !important;
+    line-height: 17px !important;
+  }
+
+  [data-account-card] footer strong {
+    font-size: 20px !important;
+  }
+
+  [data-account-card] footer button {
+    padding: 10px 18px !important;
+    font-size: 15px !important;
+    height: 44px !important;
+    min-width: 88px !important;
+  }
+
+  [data-top-verified-artwork] {
+    height: auto !important;
+    max-height: 732px;
+  }
+
+  [data-top-verified-artwork-inner] img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 991.98px) {
   [data-site-navbar] [data-navbar-content] {
     min-height: 72px;
     padding: 12px 16px;
-    flex-wrap: wrap;
-    justify-content: center !important;
-    gap: 12px 20px;
+    flex-wrap: nowrap !important;
   }
+}
 
-  [data-navbar-links] {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    gap: 16px !important;
-  }
-
-  [data-navbar-links] a {
-    font-size: 15px !important;
-  }
-
-  [data-navbar-actions] {
-    gap: 10px !important;
-  }
+@media (max-width: 767.98px) {
 
   [data-hero-content] {
     min-height: auto !important;
@@ -226,86 +478,212 @@ main > footer {
 
   [data-hero-search] {
     width: min(100%, 812px) !important;
-    height: 64px !important;
-    padding: 18px !important;
+    height: 56px !important;
+    padding: 12px 16px !important;
+  }
+
+  [data-hero-search] input {
+    font-size: 14px !important;
+  }
+
+  [data-hero-search] span {
+    font-size: 13px !important;
+    left: 44px !important;
+  }
+
+  [data-hero-popular] {
+    gap: 6px !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    margin-bottom: 20px !important;
+    justify-content: center !important;
+  }
+
+  [data-hero-popular] button {
+    height: 32px !important;
+    min-height: 32px !important;
+    padding: 4px 12px !important;
+    font-size: 12px !important;
+    border-radius: 20px !important;
   }
 
   [data-hero-tabs] {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
     width: 100% !important;
-    gap: 12px !important;
+    max-width: 360px !important;
+    margin-bottom: 24px !important;
   }
 
-  [data-hero-tabs] > button {
-    width: min(100%, 247px) !important;
+  [data-hero-tabs]>button {
+    width: calc(50% - 5px) !important;
+    flex: 1 1 calc(50% - 5px) !important;
+    height: 46px !important;
+    padding: 8px 12px !important;
+    font-size: 14px !important;
+    gap: 8px !important;
   }
 
   [data-hero-categories] {
-    gap: 8px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    margin: 0 auto !important;
+  }
+
+  [data-hero-categories]>button {
+    min-width: 0 !important;
+    width: 100% !important;
+    height: 46px !important;
+    padding: 8px 12px !important;
+    font-size: 13px !important;
+    gap: 6px !important;
+  }
+
+  [data-hero-categories]>button img {
+    width: 24px !important;
+    height: 24px !important;
   }
 
   [data-live-marketplace] {
     padding: 40px 16px 48px !important;
     gap: 32px !important;
+    margin-bottom: 32px !important;
   }
 
   [data-live-marketplace-title] {
-    font-size: 32px !important;
-    text-align: center;
+    font-size: 26px !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
   }
 
   [data-live-marketplace-cards] {
     width: 100% !important;
     flex-direction: column;
     align-items: center !important;
+    gap: 24px !important;
   }
 
   [data-live-marketplace-column],
   [data-live-marketplace-deal] {
-    width: min(100%, 448px) !important;
-    max-width: 100% !important;
+    width: 100% !important;
+    max-width: 448px !important;
     flex: 0 0 auto !important;
+    margin-bottom: 24px !important;
+    box-sizing: border-box !important;
   }
 
   [data-live-marketplace-column] {
-    height: 411px !important;
+    height: auto !important;
+    min-height: auto !important;
   }
 
   [data-live-marketplace-card] {
     width: 100% !important;
     max-width: 100% !important;
-    padding: 24px !important;
+    padding: 20px 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  [data-live-marketplace-deal] > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 406px !important;
+    padding: 20px 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  [data-live-marketplace-deal] > div > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  [data-live-marketplace-deal] p {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  [data-live-marketplace-deal] button {
+    width: 100% !important;
+    max-width: 235px !important;
   }
 
   [data-featured-accounts] {
-    width: calc(100% - 32px) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 40px 16px 48px !important;
     height: auto !important;
-    padding: 40px 0 48px !important;
+    overflow: hidden;
+    margin-bottom: 32px !important;
   }
 
   [data-featured-accounts-header] {
     height: auto !important;
-    margin-bottom: 24px !important;
-    flex-wrap: wrap;
-    gap: 16px;
+    margin-bottom: 20px !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
   }
 
   [data-featured-accounts-header] h3 {
-    width: 100%;
-    font-size: 30px !important;
+    width: auto !important;
+    font-size: 22px !important;
+    line-height: 1.25 !important;
   }
 
   [data-featured-accounts-actions] {
-    width: 100%;
-    justify-content: space-between;
+    width: auto !important;
+    gap: 12px !important;
   }
 
-  [data-featured-accounts-carousel] {
-    padding-bottom: 4px;
+  [data-featured-accounts-actions] .see-all-button {
+    font-size: 14px !important;
+  }
+
+  [data-featured-accounts-actions] .slider-navigation-button {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 18px !important;
+    display: inline-flex !important;
+  }
+
+  [data-featured-account-card] {
+    flex: 0 0 min(300px, calc(100vw - 48px)) !important;
+    min-width: min(300px, calc(100vw - 48px)) !important;
+    max-width: min(300px, calc(100vw - 48px)) !important;
+    scroll-snap-align: start;
   }
 
   [data-account-card] {
     width: 100% !important;
     min-width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  [data-account-card] footer {
+    width: 100% !important;
+    gap: 8px !important;
+  }
+
+  [data-account-card] footer strong {
+    font-size: 20px !important;
+    line-height: 26px !important;
+  }
+
+  [data-account-card] footer button {
+    box-sizing: border-box !important;
+    min-width: 80px !important;
+    height: 42px !important;
+    padding: 8px 14px !important;
+    font-size: 15px !important;
+    flex-shrink: 0 !important;
   }
 
   [data-top-rated-boosting] [data-top-rated-boosting-container] {
@@ -314,47 +692,71 @@ main > footer {
   }
 
   [data-top-verified-seller] {
-    padding: 48px 0 !important;
-    gap: 32px !important;
+    padding: 32px 16px 24px !important;
+    gap: 20px !important;
+    margin-bottom: 16px !important;
+    height: auto !important;
   }
 
   [data-top-verified-header] {
-    width: calc(100% - 32px) !important;
+    width: 100% !important;
     height: auto !important;
-    gap: 16px !important;
+    gap: 8px !important;
   }
 
   [data-top-verified-header] h2 {
     height: auto !important;
-    font-size: 32px !important;
+    font-size: 22px !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+    flex-wrap: wrap !important;
   }
 
   [data-top-verified-header] p {
     height: auto !important;
-    font-size: 18px !important;
+    font-size: 13.5px !important;
     line-height: 1.35 !important;
+    text-align: center !important;
   }
 
   [data-top-verified-artwork],
   [data-top-verified-artwork-inner],
   [data-top-verified-artwork-inner] img {
-    height: 420px !important;
+    height: 260px !important;
   }
 
   [data-top-verified-navigation] {
-    right: 16px !important;
-    left: 16px !important;
+    right: 8px !important;
+    left: 8px !important;
+    height: 36px !important;
+  }
+
+  [data-top-verified-navigation] button {
+    width: 36px !important;
+    height: 36px !important;
+    border-width: 1.5px !important;
+  }
+
+  [data-top-verified-navigation] button svg {
+    width: 14px !important;
+    height: 14px !important;
   }
 
   [data-cta-section] {
-    width: calc(100% - 32px) !important;
-    padding: 40px 0 !important;
+    width: 100% !important;
+    padding: 24px 16px !important;
+    margin-bottom: 24px !important;
+    box-sizing: border-box !important;
   }
 
   [data-cta-frame] {
+    width: 100% !important;
+    max-width: 100% !important;
     height: auto !important;
-    min-height: 560px;
-    padding: 48px 16px !important;
+    min-height: auto !important;
+    padding: 28px 16px !important;
+    margin-bottom: 0 !important;
+    box-sizing: border-box !important;
   }
 
   [data-cta-content],
@@ -365,11 +767,11 @@ main > footer {
   }
 
   [data-cta-content] {
-    gap: 36px !important;
+    gap: 20px !important;
   }
 
   [data-cta-copy] {
-    gap: 16px !important;
+    gap: 12px !important;
   }
 
   [data-cta-copy] h2,
@@ -379,25 +781,46 @@ main > footer {
   }
 
   [data-cta-copy] h2 {
-    font-size: 30px !important;
-    line-height: 1.15 !important;
+    font-size: 22px !important;
+    line-height: 1.25 !important;
   }
 
   [data-cta-copy] p {
-    font-size: 18px !important;
-    line-height: 1.35 !important;
+    font-size: 13.5px !important;
+    line-height: 1.4 !important;
   }
 
   [data-cta-actions] {
     width: 100% !important;
     height: auto !important;
     flex-basis: auto !important;
-    flex-direction: column;
-    gap: 16px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  [data-cta-actions] button {
+    flex: 1 1 120px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 38px !important;
+    padding: 6px 10px !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+    text-align: center !important;
+    word-break: break-word !important;
   }
 
   [data-site-footer] {
-    padding: 24px 0 !important;
+    padding: 32px 0 24px !important;
+    margin-top: 32px !important;
   }
 
   [data-footer-container] {
@@ -406,36 +829,69 @@ main > footer {
   }
 
   [data-footer-shell] {
-    padding: 32px 24px !important;
+    padding: 32px 20px !important;
     border-radius: 28px !important;
+    margin-top: 0 !important;
   }
 
   [data-footer-top-row] {
     flex-direction: column !important;
-    gap: 32px !important;
+    gap: 28px !important;
   }
 
   [data-footer-brand] {
     max-width: 100% !important;
+    width: 100% !important;
+    flex: 0 0 auto !important;
+    gap: 16px !important;
+  }
+
+  [data-footer-brand] p {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .footer-social-icon {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .footer-social-icon svg {
+    width: 22px !important;
+    height: 22px !important;
   }
 
   [data-footer-link-groups] {
-    width: 100%;
-    gap: 32px !important;
+    width: 100% !important;
+    gap: 24px 16px !important;
   }
 
   [data-footer-link-group] {
-    width: calc(50% - 16px) !important;
+    width: calc(50% - 8px) !important;
+    flex: 0 0 calc(50% - 8px) !important;
+    gap: 16px !important;
+  }
+
+  [data-footer-link-group] h6 {
+    font-size: 18px !important;
+    width: auto !important;
+  }
+
+  [data-footer-link-group] a {
+    font-size: 14px !important;
   }
 
   [data-site-footer] .footer-back-to-top {
     position: static !important;
     align-self: flex-end;
+    margin-top: 12px;
   }
 }
 
 @media (max-width: 399.98px) {
-  [data-hero-tabs] > button {
+  [data-hero-tabs]>button {
     width: 100% !important;
   }
 
@@ -445,5 +901,6 @@ main > footer {
 
   [data-footer-link-group] {
     width: 100% !important;
+    flex: 0 0 100% !important;
   }
 }

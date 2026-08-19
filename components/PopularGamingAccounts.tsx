@@ -189,22 +189,20 @@ export default function PopularGamingAccounts() {
   const visibleGames = games.map((_, index) => games[(index + activeIndex) % games.length]);
 
   return (
-    <>
-      <section data-popular-gaming-section style={sectionStyle}>
-        <div data-popular-gaming-inner style={innerStyle}>
-          <div style={headerStyle}>
-            <h3 data-popular-gaming-title style={titleStyle}>{popularGamingAccountsSection.title} <span style={{ color: '#a023ec' }}>{popularGamingAccountsSection.accentTitle}</span></h3>
-            <div data-popular-gaming-controls style={controlsStyle}>
-              <button data-popular-gaming-control type="button" aria-label="Previous popular game" onClick={() => moveSlider(-1)} className="slider-navigation-button" style={controlButtonStyle}>&lsaquo;</button>
-              <button data-popular-gaming-control type="button" aria-label="Next popular game" onClick={() => moveSlider(1)} className="slider-navigation-button" style={controlButtonStyle}>&rsaquo;</button>
-            </div>
-          </div>
-
-          <div data-popular-gaming-cards style={cardsStyle}>
-            {visibleGames.map((game) => <PopularGameCard key={game.id} game={game} />)}
+    <section data-popular-gaming-section style={sectionStyle}>
+      <div data-popular-gaming-inner style={innerStyle}>
+        <div data-popular-gaming-header style={headerStyle}>
+          <h3 data-popular-gaming-title style={titleStyle}>{popularGamingAccountsSection.title} <span style={{ color: '#a023ec' }}>{popularGamingAccountsSection.accentTitle}</span></h3>
+          <div data-popular-gaming-controls style={controlsStyle}>
+            <button data-popular-gaming-control type="button" aria-label="Previous popular game" onClick={() => moveSlider(-1)} className="slider-navigation-button" style={controlButtonStyle}>&lsaquo;</button>
+            <button data-popular-gaming-control type="button" aria-label="Next popular game" onClick={() => moveSlider(1)} className="slider-navigation-button" style={controlButtonStyle}>&rsaquo;</button>
           </div>
         </div>
-      </section>
-    </>
+
+        <div data-popular-gaming-cards style={cardsStyle}>
+          {visibleGames.map((game) => <PopularGameCard key={game.id} game={game} />)}
+        </div>
+      </div>
+    </section>
   );
 }
