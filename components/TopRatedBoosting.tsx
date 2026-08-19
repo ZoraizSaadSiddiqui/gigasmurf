@@ -22,7 +22,7 @@ const titleStyle: CSSProperties = {
   maxWidth: '100%',
   height: '57px',
   color: '#fff',
-  fontFamily: "'Manrope', sans-serif",
+  fontFamily: 'Poppins',
   fontSize: '42px',
   fontWeight: 700,
   lineHeight: 1,
@@ -54,7 +54,7 @@ const searchInputStyle: CSSProperties = {
   borderRadius: 0,
   background: 'transparent',
   color: '#fff',
-  fontFamily: "'Manrope', sans-serif",
+  fontFamily: '',
   fontSize: '16px',
   lineHeight: '22px',
   boxShadow: 'none',
@@ -69,7 +69,7 @@ const filterButtonStyle: CSSProperties = {
   borderRadius: '105px',
   background: 'transparent',
   color: '#fff',
-  fontFamily: "'Manrope', sans-serif",
+  fontFamily: 'Manrope',
   fontSize: '20px',
   fontWeight: 600,
   lineHeight: 1,
@@ -107,7 +107,7 @@ const sellAllButtonStyle: CSSProperties = {
   borderRadius: '105px',
   background: 'rgba(160, 35, 236, 0.1)',
   color: '#fff',
-  fontFamily: "'Manrope', sans-serif",
+  fontFamily: 'Poppins',
   fontSize: '18px',
   fontWeight: 700,
   lineHeight: '30px',
@@ -125,7 +125,7 @@ export default function TopRatedBoosting() {
   const { boosting } = siteContent;
   return (
     <>
-      <section style={sectionStyle}>
+      <section data-top-rated-boosting style={sectionStyle}>
         <div data-top-rated-boosting-container className="container d-flex flex-column align-items-center" style={containerStyle}>
           <h2 data-top-rated-boosting-title className="mb-0 text-center" style={titleStyle}>
             {boosting.title} <span style={{ color: '#a023ec' }}>{boosting.accentTitle}</span>

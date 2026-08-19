@@ -48,7 +48,7 @@ const popularTagStyle: CSSProperties = {
   borderRadius: '100000px',
   background: 'rgba(255, 255, 255, 0.05)',
   color: 'rgba(255, 255, 255, 0.7)',
-  fontFamily: 'Manrope, sans-serif',
+  fontFamily: 'Poppins',
   fontWeight: 400,
   fontSize: '14px',
   lineHeight: '100%',
@@ -68,7 +68,7 @@ const heroTabStyle: CSSProperties = {
   borderRadius: '105px',
   background: 'transparent',
   color: '#FFFFFF',
-  fontFamily: 'Manrope, sans-serif',
+  fontFamily: 'Poppins',
   fontSize: '16px',
   fontWeight: 600,
 };
@@ -93,7 +93,7 @@ const categoryButtonStyle: CSSProperties = {
   borderRadius: '100000px',
   background: 'rgba(255, 255, 255, 0.04)',
   color: 'rgba(255, 255, 255, 0.8)',
-  fontFamily: 'Manrope, sans-serif',
+  fontFamily: 'Poppins',
   fontSize: '14px',
   fontWeight: 500,
   backdropFilter: 'blur(50px)',
@@ -123,11 +123,11 @@ export default function HeroSection() {
   const [hoveredTab, setHoveredTab] = useState<number | null>(null);
 
   return (
-    <section className="text-center position-relative overflow-hidden py-5 d-flex align-items-center justify-content-center" style={heroSectionStyle}>
-      <div className="mx-auto d-flex flex-column align-items-center justify-content-center" style={heroContentStyle}>
+    <section data-hero-section className="text-center position-relative overflow-hidden py-5 d-flex align-items-center justify-content-center" style={heroSectionStyle}>
+      <div data-hero-content className="mx-auto d-flex flex-column align-items-center justify-content-center" style={heroContentStyle}>
         <div className="mx-auto">
           <div className="d-flex justify-content-center mb-4">
-            <div className="d-flex align-items-center justify-content-between position-relative" style={heroSearchStyle}>
+            <div data-hero-search className="d-flex align-items-center justify-content-between position-relative" style={heroSearchStyle}>
               <div className="d-flex align-items-center w-100 gap-3">
                 <span className="text-white-50 d-flex align-items-center"><SearchIcon /></span>
                 <input
@@ -150,7 +150,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="d-flex justify-content-center align-items-center flex-wrap mx-auto mb-5" style={heroTabsStyle}>
+        <div data-hero-tabs className="d-flex justify-content-center align-items-center flex-wrap mx-auto mb-5" style={heroTabsStyle}>
           <button 
             type="button" 
             className="hero-tab-button d-inline-flex align-items-center justify-content-center" 
@@ -175,7 +175,7 @@ export default function HeroSection() {
           </button>
         </div>
 
-        <div className="d-flex justify-content-center align-items-center flex-wrap mx-auto" style={categoriesStyle}>
+        <div data-hero-categories className="d-flex justify-content-center align-items-center flex-wrap mx-auto" style={categoriesStyle}>
           {hero.categories.map((category) => (
             <button key={category.label} type="button" className="btn d-inline-flex align-items-center justify-content-center" style={categoryButtonStyle}>
               <img src={category.image} alt={category.label} width="36" height="36" style={{ objectFit: 'contain' }} />

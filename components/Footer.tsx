@@ -40,7 +40,7 @@ const socialIcons = {
 export default function Footer() {
   const { brand, footer: footerContent } = siteContent;
   const linkStyle = {
-    fontFamily: 'Manrope, sans-serif',
+    fontFamily: 'Poppins',
     fontWeight: 400,
     fontSize: '18px',
     lineHeight: '1.5',
@@ -49,7 +49,7 @@ export default function Footer() {
   };
 
   const headingStyle = {
-    fontFamily: 'Manrope, sans-serif',
+    fontFamily: 'Poppins',
     fontWeight: 600,
     fontSize: '24px',
     lineHeight: '1.3',
@@ -65,7 +65,7 @@ export default function Footer() {
   };
 
   return (
-    <footer style={{ backgroundColor: '#0D0420', padding: '40px 0' }}>
+    <footer data-site-footer style={{ backgroundColor: '#0D0420', padding: '40px 0' }}>
       {false && <style>{`
         /* Social icons — large circles matching Figma */
         .footer-social-icon {
@@ -107,8 +107,9 @@ export default function Footer() {
         }
       `}</style>}
 
-      <div className="container" style={{ maxWidth: '1290px' }}>
+      <div data-footer-container className="container" style={{ maxWidth: '1290px' }}>
         <div
+          data-footer-shell
           style={{
             position: 'relative',
             width: '100%',
@@ -125,6 +126,7 @@ export default function Footer() {
         >
           {/* top row */}
           <div
+            data-footer-top-row
             style={{
               position: 'relative',
               display: 'flex',
@@ -137,6 +139,7 @@ export default function Footer() {
           >
             {/* logo + description + socials */}
             <div
+              data-footer-brand
               style={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -153,7 +156,7 @@ export default function Footer() {
 
               <p
                 style={{
-                  fontFamily: 'Manrope, sans-serif',
+                  fontFamily: 'Manrope',
                   fontWeight: 400,
                   fontSize: '18px',
                   lineHeight: '1.5',
@@ -177,6 +180,7 @@ export default function Footer() {
 
             {/* link columns */}
             <div
+              data-footer-link-groups
               style={{
                 display: 'flex',
                 flexDirection: 'row',
@@ -185,7 +189,7 @@ export default function Footer() {
               }}
             >
               {footerContent.linkGroups.map((group) => (
-                <div key={group.title} style={{ display: 'flex', flexDirection: 'column', gap: '32px', width: '163px' }}>
+                <div data-footer-link-group key={group.title} style={{ display: 'flex', flexDirection: 'column', gap: '32px', width: '163px' }}>
                   <h6 style={group.title === 'Support & Legal' ? { ...headingStyle, width: 'auto', whiteSpace: 'nowrap' } : headingStyle}>{group.title}</h6>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                     {group.links.map((link) => <a key={link} href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>{link}</a>)}
@@ -222,7 +226,7 @@ export default function Footer() {
           {/* copyright */}
           <p
             style={{
-              fontFamily: 'Manrope, sans-serif',
+              fontFamily: 'Manrope',
               fontWeight: 400,
               fontSize: '16px',
               lineHeight: '1.5',

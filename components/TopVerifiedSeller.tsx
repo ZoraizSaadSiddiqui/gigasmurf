@@ -22,7 +22,7 @@ const titleStyle: CSSProperties = {
   height: '57px',
   margin: 0,
   color: '#fff',
-  fontFamily: "'Manrope', sans-serif",
+  fontFamily: 'Poppins',
   fontSize: '42px',
   fontWeight: 700,
   lineHeight: 1,
@@ -35,7 +35,7 @@ const descriptionStyle: CSSProperties = {
   height: '66px',
   margin: 0,
   color: 'rgba(212, 212, 212, 0.8)',
-  fontFamily: "'Manrope', sans-serif",
+  fontFamily: 'Poppins',
   fontSize: '24px',
   fontWeight: 400,
   lineHeight: 1,
@@ -147,11 +147,13 @@ export default function TopVerifiedSeller() {
   const { topVerifiedSeller } = siteContent;
   return (
     <section
+      data-top-verified-seller
       className="d-flex flex-column align-items-center overflow-hidden"
       style={sectionStyle}
     >
       {/* Header */}
       <div
+        data-top-verified-header
         className="d-flex flex-column align-items-center"
         style={{
           ...headerStyle,
@@ -183,10 +185,11 @@ export default function TopVerifiedSeller() {
 
       {/* Artwork */}
       <div
+        data-top-verified-artwork
         className="position-relative w-100"
         style={artworkViewportStyle}
       >
-        <div style={artworkStyle}>
+        <div data-top-verified-artwork-inner style={artworkStyle}>
 
           {/* Full Image */}
           <img
@@ -197,6 +200,7 @@ export default function TopVerifiedSeller() {
 
           {/* Center Arrows */}
           <div
+            data-top-verified-navigation
             className="d-flex align-items-center justify-content-between"
             style={navigationStyle}
           >

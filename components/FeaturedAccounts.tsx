@@ -29,7 +29,7 @@ const headerStyle: CSSProperties = {
 
 const titleStyle: CSSProperties = {
   color: '#fff',
-  fontFamily: "'Manrope', sans-serif",
+  fontFamily: 'Manrope',
   fontSize: '42px',
   fontWeight: 700,
   lineHeight: 1,
@@ -43,7 +43,7 @@ const seeAllStyle: CSSProperties = {
   border: 0,
   background: 'transparent',
   color: '#a023ec',
-  fontFamily: "'Manrope', sans-serif",
+  fontFamily: 'Manrope',
   fontSize: '18px',
   fontWeight: 700,
   lineHeight: '30px',
@@ -96,11 +96,11 @@ export default function FeaturedAccounts() {
   }, []);
 
   return (
-    <section className="d-flex flex-column" style={sectionStyle}>
-      <div className="container-fluid px-0" style={containerStyle}>
-        <div className="d-flex align-items-center justify-content-between flex-nowrap" style={headerStyle}>
+    <section data-featured-accounts className="d-flex flex-column" style={sectionStyle}>
+      <div data-featured-accounts-container className="container-fluid px-0" style={containerStyle}>
+        <div data-featured-accounts-header className="d-flex align-items-center justify-content-between flex-nowrap" style={headerStyle}>
           <h3 className="mb-0" style={titleStyle}>{featuredAccountsSection.title} <span style={{ color: '#a023ec' }}>{featuredAccountsSection.accentTitle}</span></h3>
-          <div className="d-flex align-items-center gap-3">
+          <div data-featured-accounts-actions className="d-flex align-items-center gap-3">
             <button type="button" className="btn see-all-button" style={{ ...seeAllStyle, flexShrink: 0 }}>{featuredAccountsSection.seeAllLabel} <span aria-hidden="true">&rarr;</span></button>
             <div className="d-flex gap-2">
               <button type="button" onClick={() => moveCarousel(-1)} aria-label="Previous featured account" className="btn slider-navigation-button d-flex align-items-center justify-content-center" style={navigationStyle}>&lsaquo;</button>
@@ -109,7 +109,7 @@ export default function FeaturedAccounts() {
           </div>
         </div>
 
-        <div ref={carouselRef} style={carouselStyle}>
+        <div data-featured-accounts-carousel ref={carouselRef} style={carouselStyle}>
           <div className="d-flex" style={gridStyle}>
             {siteContent.featuredAccounts.map((account) => <div key={account.id} data-featured-account-card style={accountColumnStyle}><AccountCard acc={account} /></div>)}
           </div>

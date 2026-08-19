@@ -15,7 +15,7 @@ const titleStyle: CSSProperties = {
   height: 'auto',
   margin: 0,
   color: '#fff',
-  fontFamily: 'Manrope, sans-serif',
+  fontFamily: 'Poppins',
   fontSize: '42px',
   fontWeight: 700,
   lineHeight: 1,
@@ -72,27 +72,27 @@ export default function LiveMarketplace() {
   const { marketplace } = siteContent;
 
   return (
-    <section className="d-flex flex-column align-items-center" style={sectionStyle}>
-      <h2 style={titleStyle}>
+    <section data-live-marketplace className="d-flex flex-column align-items-center" style={sectionStyle}>
+      <h2 data-live-marketplace-title style={titleStyle}>
         {marketplace.title} <span style={{ color: '#a023ec' }}>{marketplace.accentTitle}</span>
       </h2>
 
-      <div className="d-flex align-items-stretch" style={cardsRowStyle}>
-        <div style={cardColumnStyle}>
-          <div className="card d-flex flex-column" style={marketCardStyle}>
+      <div data-live-marketplace-cards className="d-flex align-items-stretch" style={cardsRowStyle}>
+        <div data-live-marketplace-column style={cardColumnStyle}>
+          <div data-live-marketplace-card className="card d-flex flex-column" style={marketCardStyle}>
             <span aria-hidden="true" style={cardHighlightStyle} />
             <div className="d-flex align-items-center" style={headerStyle}><span style={liveBadgeStyle} /><h5 style={marketTitleStyle}>{marketplace.liveTitle}</h5></div>
             {marketplace.liveActivity.map((item) => <MarketActivityCard key={item.id} item={item} />)}
           </div>
         </div>
-        <div style={cardColumnStyle}>
-          <div className="card d-flex flex-column" style={marketCardStyle}>
+        <div data-live-marketplace-column style={cardColumnStyle}>
+          <div data-live-marketplace-card className="card d-flex flex-column" style={marketCardStyle}>
             <span aria-hidden="true" style={cardHighlightStyle} />
             <div className="d-flex align-items-center" style={headerStyle}><h5 style={marketTitleStyle}>{marketplace.soldTitle}</h5></div>
             {marketplace.recentlySold.map((item) => <MarketActivityCard key={item.id} item={item} isSold />)}
           </div>
         </div>
-        <div style={{ flex: '0 0 285px', width: '285px', height: '406px', maxWidth: '448px' }}><FlashDealCard /></div>
+        <div data-live-marketplace-deal style={{ flex: '0 0 285px', width: '285px', height: '406px', maxWidth: '448px' }}><FlashDealCard /></div>
       </div>
     </section>
   );

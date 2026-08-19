@@ -41,7 +41,7 @@ const highlightStyle: CSSProperties = {
   background: 'linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, 0) 100%)',
 };
 
-const flashTitleStyle: CSSProperties = { margin: 0, color: '#fff', fontFamily: 'Manrope, sans-serif', fontSize: '20px', fontWeight: 700, lineHeight: 1 };
+const flashTitleStyle: CSSProperties = { margin: 0, color: '#fff', fontFamily: 'Poppins', fontSize: '20px', fontWeight: 700, lineHeight: 1 };
 const discountStyle: CSSProperties = {
   width: '57px',
   height: '32px',
@@ -51,7 +51,7 @@ const discountStyle: CSSProperties = {
   borderRadius: '9999px',
   background: 'rgba(34, 197, 94, 0.1)',
   color: '#22c55e',
-  fontFamily: 'Manrope, sans-serif',
+  fontFamily: 'Poppins',
   fontSize: '14px',
   fontWeight: 600,
   fontStyle: 'normal',
@@ -63,7 +63,7 @@ const discountStyle: CSSProperties = {
 };
 const flashContentStyle: CSSProperties = { width: '237px', gap: '16px' };
 const flashImageStyle: CSSProperties = { width: '106px', height: '100px', display: 'block', objectFit: 'cover', borderRadius: '12px' };
-const descriptionStyle: CSSProperties = { width: '237px', minHeight: '38px', margin: 0, color: '#cfc2d6', fontFamily: 'Manrope, sans-serif', fontSize: '14px', fontWeight: 400, lineHeight: '14px', textAlign: 'center' };
+const descriptionStyle: CSSProperties = { width: '237px', minHeight: '38px', margin: 0, color: '#cfc2d6', fontFamily: 'Poppins', fontSize: '14px', fontWeight: 400, lineHeight: '14px', textAlign: 'center' };
 const timerStyle: CSSProperties = {
   width: '198px',
   height: '41px',
@@ -76,7 +76,7 @@ const timerStyle: CSSProperties = {
   color: '#8529ff',
 };
 const timerIconStyle: CSSProperties = { width: '24px', height: '24px', flexShrink: 0 };
-const timerTextStyle: CSSProperties = { width: '126px', height: '33px', color: '#8529ff', fontFamily: 'Manrope, sans-serif', fontSize: '24px', fontWeight: 400, fontStyle: 'normal', lineHeight: '100%', letterSpacing: '5px' };
+const timerTextStyle: CSSProperties = { width: '126px', height: '33px', color: '#8529ff', fontFamily: 'Poppins', fontSize: '24px', fontWeight: 400, fontStyle: 'normal', lineHeight: '100%', letterSpacing: '5px' };
 const buttonStyle: CSSProperties = {
   width: '235px',
   height: '48px',
@@ -88,7 +88,7 @@ const buttonStyle: CSSProperties = {
   borderRadius: '105px',
   background: '#a023ec',
   color: '#fff',
-  fontFamily: 'Manrope, sans-serif',
+  fontFamily: 'Poppins',
   fontSize: '14px',
   fontWeight: 600,
   lineHeight: 1,

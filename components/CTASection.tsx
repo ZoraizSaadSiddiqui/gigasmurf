@@ -102,7 +102,7 @@ const titleStyle: CSSProperties = {
   height: '114px',
   margin: 0,
   color: '#fff',
-  fontFamily: "'Manrope', sans-serif",
+  fontFamily: 'Manrope',
   fontSize: '42px',
   fontWeight: 700,
   lineHeight: 1,
@@ -117,7 +117,7 @@ const descriptionStyle: CSSProperties = {
   height: '99px',
   margin: 0,
   color: 'rgba(212, 212, 212, 0.8)',
-  fontFamily: "'Manrope'",
+  fontFamily: 'Manrope',
   fontSize: '24px',
   fontWeight: 400,
   lineHeight: 1,
@@ -147,7 +147,7 @@ const buttonBaseStyle: CSSProperties = {
   borderRadius: '105px',
   background: 'transparent',
   color: '#fff',
-  fontFamily: "'Manrope', sans-serif",
+  fontFamily: 'Manrope',
   fontSize: '18px',
   fontWeight: 700,
   lineHeight: '30px',
@@ -162,7 +162,7 @@ const sparkleStyle: CSSProperties = {
   position: 'absolute',
   zIndex: 1,
   color: 'rgba(255, 255, 255, 0.8)',
-  fontFamily: 'Arial, sans-serif',
+  fontFamily: 'Manrope',
   fontSize: '21px',
   lineHeight: 1,
   textShadow: '0 0 12px rgba(255, 255, 255, 0.65)',
@@ -175,11 +175,13 @@ export default function CTASection() {
   return (
     <section
       id="cta-section"
+      data-cta-section
       aria-labelledby="cta-title"
       className="d-flex flex-column align-items-center justify-content-center"
       style={sectionStyle}
     >
       <div
+        data-cta-frame
         className="d-flex align-items-center justify-content-center"
         style={frameStyle}
       >
@@ -204,10 +206,11 @@ export default function CTASection() {
         <span aria-hidden="true" style={{ ...sparkleStyle, top: '228px', right: '7px' }}>✦</span>
 
         <div
+          data-cta-content
           className="d-flex flex-column align-items-center justify-content-between"
           style={contentStyle}
         >
-          <div className="d-flex flex-column align-items-center" style={copyStyle}>
+          <div data-cta-copy className="d-flex flex-column align-items-center" style={copyStyle}>
             <h2 id="cta-title" className="d-flex align-items-center justify-content-center" style={titleStyle}>
               <span>
             {cta.title.split('\n')[0]}
@@ -227,7 +230,7 @@ export default function CTASection() {
             </p>
           </div>
 
-          <div className="d-flex align-items-center justify-content-center" style={actionsStyle}>
+          <div data-cta-actions className="d-flex align-items-center justify-content-center" style={actionsStyle}>
             <button
               type="button"
               className="btn cta-action-button d-inline-flex align-items-center justify-content-center"

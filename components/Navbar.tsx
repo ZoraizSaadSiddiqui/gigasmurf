@@ -6,26 +6,26 @@ export default function Navbar() {
   const { brand, navigation } = siteContent;
 
   return (
-    <nav className="navbar" style={{ backgroundColor: '#11072D' }}>
-      <div className="container d-flex align-items-center justify-content-between">
+    <nav data-site-navbar className="navbar" style={{ backgroundColor: '#11072D' }}>
+      <div data-navbar-content className="container d-flex align-items-center justify-content-between">
         <a className="navbar-brand" href="#">
           <img src={brand.logo} alt={brand.name} style={{ width: '185.8px', height: '55.29px' }} />
         </a>
 
-        <div className="d-flex align-items-center gap-4">
+        <div data-navbar-links className="d-flex align-items-center gap-4">
           {navigation.links.map((link) => (
             <a
               key={link.label}
               href={link.href}
               className="text-white text-decoration-none"
-              style={{ fontFamily: 'Manrope', fontSize: '18px', fontWeight: 500, lineHeight: '100%', letterSpacing: '0%' }}
+              style={{ fontFamily: 'Poppins', fontSize: '18px', fontWeight: 500, lineHeight: '100%', letterSpacing: '0%' }}
             >
               {link.label}
             </a>
           ))}
         </div>
 
-        <div className="d-flex align-items-center gap-3">
+        <div data-navbar-actions className="d-flex align-items-center gap-3">
           <a href="#" aria-label="Shopping cart" className="text-white position-relative d-inline-flex align-items-center justify-content-center text-decoration-none p-1">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="20" height="20" aria-hidden="true">
               <circle cx="9" cy="21" r="1" />
