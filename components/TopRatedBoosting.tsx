@@ -1,55 +1,49 @@
 import BoostingCard, { BoostingServiceData } from './cards/BoostingCard';
 
 const boostingServices: BoostingServiceData[] = [
-  { id: 1, name: 'Gaming Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', emoji: '🎮', bg: '#1a0030' },
-  { id: 2, name: 'Feathershot Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', emoji: '🏹', bg: '#001a33' },
-  { id: 3, name: 'Samurai Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', emoji: '⚔️', bg: '#1a0000' },
-  { id: 4, name: 'Grimreaper Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', emoji: '💀', bg: '#0d0d0d' },
-  { id: 5, name: 'Spartans Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', emoji: '🛡️', bg: '#001a1a' },
-  { id: 6, name: 'Warriors Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', emoji: '⚡', bg: '#1a1a00' },
-  { id: 7, name: 'Brave Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', emoji: '🦁', bg: '#001a33' },
-  { id: 8, name: 'Witch Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', emoji: '🔮', bg: '#1a001a' },
+  { id: 1, name: 'Gaming Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', image: '/5.jpg' },
+  { id: 2, name: 'Feathershot Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', image: '/6.jpg' },
+  { id: 3, name: 'Samurai Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', image: '/7.jpg' },
+  { id: 4, name: 'Grimreaper Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', image: '/8.jpg' },
+  { id: 5, name: 'Spartans Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', image: '/9.jpg' },
+  { id: 6, name: 'Warriors Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', image: '/10.jpg' },
+  { id: 7, name: 'Brave Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', image: '/11.jpg' },
+  { id: 8, name: 'Witch Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', image: '/12.jpg' },
 ];
 
 export default function TopRatedBoosting() {
   return (
-    <section className="py-5" style={{ background: 'linear-gradient(180deg, var(--deep-dark) 0%, #0D0420 100%)' }}>
-      <div className="container">
-        <h2 className="font-heading text-white text-center fw-bold fs-2 mb-3">
-          Top Rated <span className="text-purple">Boosting Services</span>
+    <section className="top-rated-boosting-section">
+      <div className="container top-rated-boosting-container d-flex flex-column align-items-center">
+        <h2 className="top-rated-boosting-title mb-0 text-center">
+          Top Rated <span>Boosting Services</span>
         </h2>
 
-        <div className="d-flex align-items-center justify-content-center gap-3 mb-4">
-          <div className="input-group" style={{ maxWidth: '360px' }}>
-            <span className="input-group-text form-control-dark border-end-0 pe-0 rounded-start-pill">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="2">
-                <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
-              </svg>
-            </span>
-            <input type="text" className="form-control form-control-dark border-start-0 ps-2 rounded-end-pill small" placeholder="Search..." />
-          </div>
-          <button className="btn btn-purple rounded-pill px-3 py-2 small d-flex align-items-center gap-2 fw-semibold">
-            All Games
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <polyline points="6 9 12 15 18 9"/>
+        <div className="top-rated-boosting-filters d-flex align-items-center">
+          <label className="top-rated-boosting-search d-flex align-items-center" htmlFor="boosting-search">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+              <circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" />
             </svg>
+            <input id="boosting-search" type="search" className="form-control" placeholder="Search..." aria-label="Search boosting services" />
+          </label>
+          <button type="button" className="btn top-rated-boosting-filter-button d-flex align-items-center justify-content-center">
+            All Games
+            <svg width="12" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
           </button>
         </div>
 
-        <div className="row g-3">
-          {boostingServices.map(svc => (
-            <div key={svc.id} className="col-lg-3 col-md-6 col-6">
+        <div className="row top-rated-boosting-grid">
+          {boostingServices.map((svc) => (
+            <div key={svc.id} className="col-12 col-md-6 col-xl-3 top-rated-boosting-grid__column">
               <BoostingCard svc={svc} />
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-4">
-          <button className="btn btn-outline-purple rounded-pill px-4 py-2 d-inline-flex align-items-center gap-2 fw-semibold">
-            See All
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <polyline points="9 18 15 12 9 6"/>
-            </svg>
+        <div className="top-rated-boosting-cta d-flex justify-content-center">
+          <button type="button" className="btn top-rated-boosting-cta__button d-inline-flex align-items-center justify-content-center">
+            <span>Sell All</span>
+            <svg className="top-rated-boosting-cta__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><polyline points="9 18 15 12 9 6" /></svg>
           </button>
         </div>
       </div>

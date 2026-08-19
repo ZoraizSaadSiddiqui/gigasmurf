@@ -1,10 +1,11 @@
+import Image from 'next/image';
+
 export interface BoostingServiceData {
   id: number;
   name: string;
   maxLevel: string;
   startingPrice: string;
-  emoji: string;
-  bg: string;
+  image: string;
 }
 
 export interface BoostingCardProps {
@@ -13,33 +14,25 @@ export interface BoostingCardProps {
 
 export default function BoostingCard({ svc }: BoostingCardProps) {
   return (
-    <div className="card card-dark overflow-hidden h-100 cursor-pointer mb-3">
-      <div className="w-100 d-flex align-items-center justify-content-center" style={{ height: '110px', background: svc.bg, fontSize: '40px' }}>
-        {svc.emoji}
+    <article className="boosting-card card h-100">
+      <div className="boosting-card__image position-relative">
+        <Image src={svc.image} alt={svc.name} fill sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 252px" />
       </div>
-      <div className="card-body p-3">
-        <h6 className="font-heading text-white fw-bold small mb-2">{svc.name}</h6>
-        <div className="d-flex justify-content-between mb-2">
-          <div>
-            <div className="text-white-50" style={{ fontSize: '10px' }}>Max Level</div>
-            <div className="text-white fw-semibold small">{svc.maxLevel}</div>
-          </div>
-          <div>
-            <div className="text-white-50" style={{ fontSize: '10px' }}>Starting price</div>
-            <div className="text-white fw-semibold small">{svc.startingPrice}</div>
-          </div>
+      <div className="boosting-card__body card-body d-flex flex-column">
+        <h3 className="boosting-card__title">{svc.name}</h3>
+        <div className="boosting-card__details">
+          <div className="d-flex justify-content-between"><span>Max Level</span><strong>{svc.maxLevel}</strong></div>
+          <div className="d-flex justify-content-between"><span>Starting price</span><strong>{svc.startingPrice}</strong></div>
         </div>
-        <div className="d-flex align-items-center justify-content-between">
-          <div className="d-flex align-items-center gap-1 text-white-50" style={{ fontSize: '11px' }}>
-            <div className="rounded-circle text-white d-flex align-items-center justify-content-center fw-bold" style={{ width: 18, height: 18, background: '#A023EC', fontSize: 9 }}>A</div>
-            AceTrader
-            <span className="badge-live ms-1" style={{ width: 6, height: 6 }} />
+        <div className="boosting-card__seller d-flex align-items-center justify-content-between">
+          <div className="d-flex align-items-center">
+            <span className="boosting-card__seller-avatar position-relative"><Image src="/boy.jpg" alt="AceTrader" fill sizes="24px" /></span>
+            <span>AceTrader</span>
+            <svg className="boosting-card__verified" viewBox="0 0 12 12" aria-label="Verified seller"><path fill="currentColor" d="M6 0l1.3 1.2 1.8-.1.7 1.6 1.5 1-.5 1.7.5 1.7-1.5 1-.7 1.6-1.8-.1L6 12 4.7 10.8l-1.8.1-.7-1.6-1.5-1 .5-1.7-.5-1.7 1.5-1 .7-1.6 1.8.1L6 0z" /><path d="M3.55 6.12l1.53 1.52 3.36-3.35" fill="none" stroke="#11072d" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </div>
-          <div className="text-white-50 d-flex align-items-center gap-1" style={{ fontSize: '11px' }}>
-            <span className="text-warning">★</span> 4.9
-          </div>
+          <span className="boosting-card__rating"><span>&#9733;</span> 4.9</span>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

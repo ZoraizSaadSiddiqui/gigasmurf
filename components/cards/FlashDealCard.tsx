@@ -21,6 +21,10 @@ export default function FlashDealCard() {
   useEffect(() => {
     const interval = setInterval(() => {
       setTime((prev) => {
+        if (prev.h === 0 && prev.m === 0 && prev.s === 0) {
+          return prev;
+        }
+
         let { h, m, s } = prev;
 
         s -= 1;
@@ -35,10 +39,6 @@ export default function FlashDealCard() {
           h -= 1;
         }
 
-        if (h < 0) {
-          return { h: 0, m: 0, s: 0 };
-        }
-
         return { h, m, s };
       });
     }, 1000);
@@ -48,12 +48,14 @@ export default function FlashDealCard() {
 
   const pad = (value: number) => String(value).padStart(2, '0');
 
+  const remainingTime = `${pad(time.h)}:${pad(time.m)}:${pad(time.s)}`;
+
   return (
-    <div className="market-widget-card card h-100 flash-deal-card">
-      <div className="flash-deal-card__header d-flex align-items-center justify-content-between">
-        <h5 className="market-widget-card__title">{flashDeal.title}</h5>
+    <article className="market-widget-card card h-100 d-flex flex-column flash-deal-card" aria-labelledby="flash-deal-title">
+      <header className="flash-deal-card__header d-flex align-items-center justify-content-between">
+        <h5 id="flash-deal-title" className="market-widget-card__title">{flashDeal.title}</h5>
         <span className="badge rounded-pill flash-deal-badge">{flashDeal.discount}</span>
-      </div>
+      </header>
 
       <div className="flash-deal-card__content d-flex flex-column align-items-center">
         <Image
@@ -68,21 +70,21 @@ export default function FlashDealCard() {
         </p>
       </div>
 
-      <div className="flash-deal-timer">
-        <svg className="flash-deal-timer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <time className="flash-deal-timer" dateTime={`PT${time.h}H${time.m}M${time.s}S`} aria-label={`${time.h} hours, ${time.m} minutes, and ${time.s} seconds remaining`}>
+        <svg className="flash-deal-timer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
           <circle cx="12" cy="12" r="10" />
           <polyline points="12 6 12 12 16 14" />
         </svg>
-        <span className="flash-deal-timer-text">{pad(time.h)}:{pad(time.m)}:{pad(time.s)}</span>
-      </div>
+        <span className="flash-deal-timer-text" aria-live="off">{remainingTime}</span>
+      </time>
 
-      <button className="btn btn-purple flash-deal-card__button rounded-pill d-flex align-items-center justify-content-center gap-2">
+      <button type="button" className="btn btn-purple flash-deal-card__button rounded-pill d-flex align-items-center justify-content-center gap-2">
         {flashDeal.cta}
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
           <polyline points="9 18 15 12 9 6" />
         </svg>
       </button>
 
-    </div>
+    </article>
   );
 }
