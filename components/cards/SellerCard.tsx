@@ -16,14 +16,7 @@ export interface SellerCardProps {
 
 export default function SellerCard({ seller }: SellerCardProps) {
   return (
-    <>
-      <style>{`
-        @keyframes seller-card-live-pulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.3; }
-        }
-      `}</style>
-      <div className={`card card-dark p-3 text-center ${seller.featured ? 'seller-card-featured' : ''}`} style={{ minWidth: '180px' }}>
+    <div className={`card card-dark p-3 text-center ${seller.featured ? 'seller-card-featured' : ''}`} style={{ minWidth: '180px' }}>
       <div
         className="w-100 rounded-3 d-flex align-items-center justify-content-center mb-3"
         style={{ background: seller.bg, height: '120px', fontSize: '48px' }}
@@ -54,7 +47,6 @@ export default function SellerCard({ seller }: SellerCardProps) {
           </div>
         </>
       )}
-      </div>
-    </>
+    </div>
   );
 }

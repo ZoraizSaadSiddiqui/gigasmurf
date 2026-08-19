@@ -1,5 +1,6 @@
 'use client';
 import type { CSSProperties } from 'react';
+import { siteContent } from '@/content/site-content';
 
 const sectionStyle: CSSProperties = {
   boxSizing: 'border-box',
@@ -169,17 +170,7 @@ const sparkleStyle: CSSProperties = {
 };
 
 export default function CTASection() {
-  const handleButtonHover = (
-    e: React.MouseEvent<HTMLButtonElement>
-  ) => {
-    e.currentTarget.style.background = '#a023ec';
-  };
-
-  const handleButtonLeave = (
-    e: React.MouseEvent<HTMLButtonElement>
-  ) => {
-    e.currentTarget.style.background = 'transparent';
-  };
+  const { cta } = siteContent;
 
   return (
     <section
@@ -219,19 +210,19 @@ export default function CTASection() {
           <div className="d-flex flex-column align-items-center" style={copyStyle}>
             <h2 id="cta-title" className="d-flex align-items-center justify-content-center" style={titleStyle}>
               <span>
-                Ready to Level Up Your Gaming
+            {cta.title.split('\n')[0]}
                 <br />
-                Experience?
+                {cta.title.split('\n')[1]}
               </span>
             </h2>
 
             <p className="d-flex align-items-center justify-content-center" style={descriptionStyle}>
               <span>
-                Join over 2 million gamers worldwide. Buy premium
+                {cta.description.split('\n')[0]}
                 <br />
-                accounts, hire pro boosters, or start earning by selling your
+                {cta.description.split('\n')[1]}
                 <br />
-                own gaming assets today.
+                {cta.description.split('\n')[2]}
               </span>
             </p>
           </div>
@@ -239,22 +230,18 @@ export default function CTASection() {
           <div className="d-flex align-items-center justify-content-center" style={actionsStyle}>
             <button
               type="button"
-              className="btn d-inline-flex align-items-center justify-content-center"
+              className="btn cta-action-button d-inline-flex align-items-center justify-content-center"
               style={{ ...buttonBaseStyle, width: '251px' }}
-              onMouseEnter={handleButtonHover}
-              onMouseLeave={handleButtonLeave}
             >
-              Create Free Account
+              {cta.primaryAction}
             </button>
 
             <button
               type="button"
-              className="btn d-inline-flex align-items-center justify-content-center"
+              className="btn cta-action-button d-inline-flex align-items-center justify-content-center"
               style={{ ...buttonBaseStyle, width: '213px', padding: '11.67px 36px' }}
-              onMouseEnter={handleButtonHover}
-              onMouseLeave={handleButtonLeave}
             >
-              Become A Seller
+              {cta.secondaryAction}
             </button>
           </div>
         </div>

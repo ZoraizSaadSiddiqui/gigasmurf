@@ -80,6 +80,7 @@ const getNavigationStyle = (isActive: boolean): CSSProperties => ({
 });
 
 export default function FeaturedAccounts() {
+  const { featuredAccountsSection } = siteContent;
   const carouselRef = useRef<HTMLDivElement>(null);
   const [activeDirection, setActiveDirection] = useState<'previous' | 'next'>('next');
 
@@ -100,9 +101,9 @@ export default function FeaturedAccounts() {
     <section className="d-flex flex-column" style={sectionStyle}>
       <div className="container-fluid px-0" style={containerStyle}>
         <div className="d-flex align-items-center justify-content-between flex-nowrap" style={headerStyle}>
-          <h3 className="mb-0" style={titleStyle}>Daily Featured <span style={{ color: '#a023ec' }}>Accounts</span></h3>
+          <h3 className="mb-0" style={titleStyle}>{featuredAccountsSection.title} <span style={{ color: '#a023ec' }}>{featuredAccountsSection.accentTitle}</span></h3>
           <div className="d-flex align-items-center gap-3">
-            <button type="button" className="btn" style={seeAllStyle}>See All (102) <span aria-hidden="true">&rarr;</span></button>
+            <button type="button" className="btn" style={seeAllStyle}>{featuredAccountsSection.seeAllLabel} <span aria-hidden="true">&rarr;</span></button>
             <div className="d-flex gap-2">
               <button type="button" onClick={() => moveCarousel(-1)} aria-label="Previous featured account" className="btn d-flex align-items-center justify-content-center" style={getNavigationStyle(activeDirection === 'previous')}>&lsaquo;</button>
               <button type="button" onClick={() => moveCarousel(1)} aria-label="Next featured account" className="btn d-flex align-items-center justify-content-center" style={getNavigationStyle(activeDirection === 'next')}>&rsaquo;</button>

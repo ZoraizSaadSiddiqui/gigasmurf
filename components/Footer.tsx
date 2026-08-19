@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { siteContent } from '@/content/site-content';
 
 const InstagramIcon = () => (
   <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -30,7 +31,14 @@ const ArrowUpIcon = () => (
   </svg>
 );
 
+const socialIcons = {
+  Instagram: InstagramIcon,
+  Facebook: FacebookIcon,
+  LinkedIn: LinkedinIcon,
+};
+
 export default function Footer() {
+  const { brand, footer: footerContent } = siteContent;
   const linkStyle = {
     fontFamily: 'Manrope, sans-serif',
     fontWeight: 400,
@@ -58,7 +66,7 @@ export default function Footer() {
 
   return (
     <footer style={{ backgroundColor: '#0D0420', padding: '40px 0' }}>
-      <style>{`
+      {false && <style>{`
         /* Social icons — large circles matching Figma */
         .footer-social-icon {
           width: 72px;
@@ -97,7 +105,7 @@ export default function Footer() {
           background: rgba(160,35,236,1);
           color: #ffffff;
         }
-      `}</style>
+      `}</style>}
 
       <div className="container" style={{ maxWidth: '1290px' }}>
         <div
@@ -138,8 +146,8 @@ export default function Footer() {
               }}
             >
               <img
-                src="/logo.png"
-                alt="Gigasmurf"
+                src={brand.logo}
+                alt={brand.name}
                 style={{ width: '185.8px', height: '55.29px', objectFit: 'contain', opacity: 1 }}
               />
 
@@ -156,21 +164,14 @@ export default function Footer() {
                   margin: 0,
                 }}
               >
-                The ultimate secure marketplace for gamers to buy, sell, and
-                boost. Built for the community, powered by trust.
+                {footerContent.description}
               </p>
 
-              {/* Larger social icons matching Figma */}
               <div style={{ display: 'flex', flexDirection: 'row', gap: '16px' }}>
-                <a href="#" className="footer-social-icon" aria-label="Instagram">
-                  <InstagramIcon />
-                </a>
-                <a href="#" className="footer-social-icon" aria-label="Facebook">
-                  <FacebookIcon />
-                </a>
-                <a href="#" className="footer-social-icon" aria-label="LinkedIn">
-                  <LinkedinIcon />
-                </a>
+                {footerContent.socialLinks.map((social) => {
+                  const SocialIcon = socialIcons[social.label];
+                  return <a key={social.label} href={social.href} className="footer-social-icon" aria-label={social.label}><SocialIcon /></a>;
+                })}
               </div>
             </div>
 
@@ -183,36 +184,14 @@ export default function Footer() {
                 gap: '80px',
               }}
             >
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', width: '163px' }}>
-                <h6 style={headingStyle}>Marketplace</h6>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>Browse Accounts</a>
-                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>Rank Boosting</a>
-                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>Top Sellers</a>
-                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>About Us</a>
-                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>Insurance</a>
+              {footerContent.linkGroups.map((group) => (
+                <div key={group.title} style={{ display: 'flex', flexDirection: 'column', gap: '32px', width: '163px' }}>
+                  <h6 style={group.title === 'Support & Legal' ? { ...headingStyle, width: 'auto', whiteSpace: 'nowrap' } : headingStyle}>{group.title}</h6>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                    {group.links.map((link) => <a key={link} href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>{link}</a>)}
+                  </div>
                 </div>
-              </div>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', width: '163px' }}>
-                <h6 style={headingStyle}>Top Games</h6>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>Valorant</a>
-                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>League of Legends</a>
-                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>Fortnite</a>
-                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>Overwatch 2</a>
-                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>CS2</a>
-                </div>
-              </div>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', width: '163px' }}>
-                <h6 style={{ ...headingStyle, width: 'auto', whiteSpace: 'nowrap' }}>Support &amp; Legal</h6>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>Privacy Policy</a>
-                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>Terms &amp; use</a>
-                  <a href="#" style={{ ...linkStyle, whiteSpace: 'nowrap' }}>Help Center</a>
-                </div>
-              </div>
+              ))}
             </div>
 
             {/* back to top — bottom-right of top row */}
@@ -252,7 +231,7 @@ export default function Footer() {
               margin: '20px 0 0',
             }}
           >
-            Copyright © 2026 Gigasmurf. All rights reserved.
+            {footerContent.copyright}
           </p>
         </div>
       </div>

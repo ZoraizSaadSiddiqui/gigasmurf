@@ -16,3 +16,93 @@ main > footer {
   padding: 0;
   box-sizing: border-box;
 }
+
+.hero-tab-button {
+  transition: background-color 0.25s ease;
+}
+
+.hero-tab-button:hover,
+.cta-action-button:hover {
+  background: #a023ec !important;
+}
+
+.footer-social-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 1px solid rgba(217, 217, 217, 0.2);
+  background: rgba(217, 217, 217, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.footer-social-icon:hover {
+  background: rgba(160, 35, 236, 1);
+  border-color: rgba(160, 35, 236, 1);
+}
+
+.footer-back-to-top {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(160, 35, 236, 1);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(160, 35, 236, 1);
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.footer-back-to-top:hover {
+  background: rgba(160, 35, 236, 1);
+  color: #ffffff;
+}
+
+@keyframes seller-card-live-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+[data-top-rated-boosting-search-input]::placeholder { color: rgba(255, 255, 255, .5); }
+[data-top-rated-boosting-search-input]:focus { background: transparent; color: #fff; box-shadow: none; }
+[data-top-rated-boosting-filter-button]:hover,
+[data-top-rated-boosting-filter-button]:focus-visible { border-color: #a023ec; background: #a023ec; color: #fff; }
+
+@media (max-width: 1239.98px) {
+  [data-top-rated-boosting-container] { width: 100% !important; min-height: auto !important; padding-right: 24px !important; padding-left: 24px !important; }
+  [data-top-rated-boosting-grid] { grid-template-columns: repeat(2, 285px) !important; width: 595px !important; }
+}
+
+@media (max-width: 767.98px) {
+  [data-top-rated-boosting-container] { padding-right: 16px !important; padding-left: 16px !important; gap: 32px !important; }
+  [data-top-rated-boosting-title] { height: auto !important; font-size: 32px !important; }
+  [data-top-rated-boosting-filters] { height: auto !important; flex-direction: column !important; }
+  [data-top-rated-boosting-search], [data-top-rated-boosting-filter-button] { width: 100% !important; }
+  [data-top-rated-boosting-grid] { grid-template-columns: 285px !important; width: 285px !important; gap: 24px !important; }
+}
+
+@media (max-width: 1277px) and (min-width: 768px) {
+  [data-popular-gaming-section] { height: auto !important; min-height: 703px !important; }
+  [data-popular-gaming-cards] { grid-template-columns: minmax(0, 2.304fr) minmax(0, 1fr) minmax(0, 1fr) !important; gap: 16px !important; }
+}
+
+@media (max-width: 767px) {
+  [data-popular-gaming-section] { width: min(100% - 32px, 560px) !important; height: auto !important; min-height: 0 !important; padding: 48px 0 !important; }
+  [data-popular-gaming-inner] { gap: 24px !important; }
+  [data-popular-gaming-title] { font-size: 30px !important; }
+  [data-popular-gaming-controls] { gap: 8px !important; }
+  [data-popular-gaming-control] { width: 36px !important; height: 36px !important; }
+  [data-popular-gaming-cards] { grid-template-columns: 1fr 1fr !important; gap: 16px !important; height: auto !important; }
+  [data-popular-game-card] { height: 290px !important; }
+  [data-popular-game-card][data-popular-game-featured] { grid-column: 1 / -1 !important; }
+  [data-popular-game-title] { right: 16px !important; bottom: 16px !important; left: 16px !important; font-size: 20px !important; }
+  [data-popular-game-open] { right: 16px !important; bottom: 16px !important; width: 40px !important; height: 40px !important; }
+  [data-popular-game-side-action] { top: 16px !important; right: 16px !important; width: 40px !important; height: 40px !important; }
+}

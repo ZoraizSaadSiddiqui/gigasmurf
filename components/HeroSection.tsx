@@ -124,14 +124,6 @@ export default function HeroSection() {
 
   return (
     <section className="text-center position-relative overflow-hidden py-5 d-flex align-items-center justify-content-center" style={heroSectionStyle}>
-      <style>{`
-        .hero-tab-button {
-          transition: background-color 0.25s ease;
-        }
-        .hero-tab-button:hover {
-          background-color: rgba(160, 35, 236, 1) !important;
-        }
-      `}</style>
       <div className="mx-auto d-flex flex-column align-items-center justify-content-center" style={heroContentStyle}>
         <div className="mx-auto">
           <div className="d-flex justify-content-center mb-4">

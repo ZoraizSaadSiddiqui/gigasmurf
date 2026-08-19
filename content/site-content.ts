@@ -18,7 +18,29 @@ export interface MarketActivityItem {
   iconClass?: string;
 }
 
+export interface BoostingServiceData {
+  id: number;
+  name: string;
+  maxLevel: string;
+  startingPrice: string;
+  image: string;
+}
+
 export const siteContent = {
+  metadata: {
+    title: 'Gigasmurf - Premium Gaming Marketplace',
+    description: 'Buy, sell, and boost gaming accounts securely. The ultimate marketplace for gamers.',
+    keywords: ['gaming marketplace', 'game accounts', 'rank boosting', 'valorant', 'fortnite', 'league of legends'],
+  },
+  brand: {
+    name: 'Gigasmurf',
+    logo: '/logo.png',
+  },
+  seller: {
+    name: 'AceTrader',
+    avatar: '/boy.jpg',
+    rating: '4.9',
+  },
   navigation: {
     links: [
       { label: 'Explore', href: '#' },
@@ -68,9 +90,62 @@ export const siteContent = {
     { id: 5, name: 'Immortal Valorant Account', desc: 'Premium Skins + Full Access', seller: 'AceTrader', rating: '4.9', price: '$999', image: '/3.png' },
     { id: 6, name: 'Fortnite Black Knight', desc: 'OG Cosmetics + 120 Skins', seller: 'AceTrader', rating: '4.8', price: '$899', image: '/1.png' },
   ] satisfies AccountData[],
+  featuredAccountsSection: {
+    title: 'Daily Featured',
+    accentTitle: 'Accounts',
+    seeAllLabel: 'See All (102)',
+  },
   popularGamingAccounts: [
     { id: 1, name: 'Overwatch 2', image: '/Gemini-Generated-img1.png', featured: true },
     { id: 2, name: 'League of Legends', image: '/Gemini-Generated-img2.png' },
     { id: 3, name: 'Valorant', image: '/Gemini-Generated-img3.png' },
   ],
+  popularGamingAccountsSection: {
+    title: 'Popular Gaming',
+    accentTitle: 'Accounts',
+  },
+  boosting: {
+    title: 'Top Rated',
+    accentTitle: 'Boosting Services',
+    searchPlaceholder: 'Search...',
+    filterLabel: 'All Games',
+    sellAllLabel: 'Sell All',
+    services: [
+      { id: 1, name: 'Gaming Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', image: '/5.jpg' },
+      { id: 2, name: 'Feathershot Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', image: '/6.jpg' },
+      { id: 3, name: 'Samurai Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', image: '/7.jpg' },
+      { id: 4, name: 'Grimreaper Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', image: '/8.jpg' },
+      { id: 5, name: 'Spartans Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', image: '/9.jpg' },
+      { id: 6, name: 'Warriors Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', image: '/10.jpg' },
+      { id: 7, name: 'Brave Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', image: '/11.jpg' },
+      { id: 8, name: 'Witch Rank Boost', maxLevel: 'Radiant', startingPrice: '$15', image: '/12.jpg' },
+    ] satisfies BoostingServiceData[],
+  },
+  topVerifiedSeller: {
+    title: 'Top Verified',
+    accentTitle: 'Seller',
+    description: 'Buy with confidence from our highest-rated community members.',
+    image: '/Group 1171277187.png',
+    imageAlt: 'Top verified seller profiles: BoostKing, MythicSeller, and LegendStore',
+  },
+  cta: {
+    title: 'Ready to Level Up Your Gaming\nExperience?',
+    description: 'Join over 2 million gamers worldwide. Buy premium\naccounts, hire pro boosters, or start earning by selling your\nown gaming assets today.',
+    primaryAction: 'Create Free Account',
+    secondaryAction: 'Become A Seller',
+  },
+  footer: {
+    description: 'The ultimate secure marketplace for gamers to buy, sell, and boost. Built for the community, powered by trust.',
+    socialLinks: [
+      { label: 'Instagram', href: '#' },
+      { label: 'Facebook', href: '#' },
+      { label: 'LinkedIn', href: '#' },
+    ],
+    linkGroups: [
+      { title: 'Marketplace', links: ['Browse Accounts', 'Rank Boosting', 'Top Sellers', 'About Us', 'Insurance'] },
+      { title: 'Top Games', links: ['Valorant', 'League of Legends', 'Fortnite', 'Overwatch 2', 'CS2'] },
+      { title: 'Support & Legal', links: ['Privacy Policy', 'Terms & use', 'Help Center'] },
+    ],
+    copyright: 'Copyright © 2026 Gigasmurf. All rights reserved.',
+  },
 } as const;

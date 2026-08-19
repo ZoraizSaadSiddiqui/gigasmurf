@@ -146,81 +146,6 @@ const sideActionStyle: CSSProperties = {
   boxSizing: 'border-box',
 };
 
-const responsiveStyles = `
-  @media (max-width: 1277px) and (min-width: 768px) {
-    [data-popular-gaming-section] {
-      height: auto !important;
-      min-height: 703px !important;
-    }
-
-    [data-popular-gaming-cards] {
-      grid-template-columns: minmax(0, 2.304fr) minmax(0, 1fr) minmax(0, 1fr) !important;
-      gap: 16px !important;
-    }
-  }
-
-  @media (max-width: 767px) {
-    [data-popular-gaming-section] {
-      width: min(100% - 32px, 560px) !important;
-      height: auto !important;
-      min-height: 0 !important;
-      padding: 48px 0 !important;
-    }
-
-    [data-popular-gaming-inner] {
-      gap: 24px !important;
-    }
-
-    [data-popular-gaming-title] {
-      font-size: 30px !important;
-    }
-
-    [data-popular-gaming-controls] {
-      gap: 8px !important;
-    }
-
-    [data-popular-gaming-control] {
-      width: 36px !important;
-      height: 36px !important;
-    }
-
-    [data-popular-gaming-cards] {
-      grid-template-columns: 1fr 1fr !important;
-      gap: 16px !important;
-      height: auto !important;
-    }
-
-    [data-popular-game-card] {
-      height: 290px !important;
-    }
-
-    [data-popular-game-card][data-popular-game-featured] {
-      grid-column: 1 / -1 !important;
-    }
-
-    [data-popular-game-title] {
-      right: 16px !important;
-      bottom: 16px !important;
-      left: 16px !important;
-      font-size: 20px !important;
-    }
-
-    [data-popular-game-open] {
-      right: 16px !important;
-      bottom: 16px !important;
-      width: 40px !important;
-      height: 40px !important;
-    }
-
-    [data-popular-game-side-action] {
-      top: 16px !important;
-      right: 16px !important;
-      width: 40px !important;
-      height: 40px !important;
-    }
-  }
-`;
-
 function PopularGameCard({ game }: { game: PopularGame }) {
   const isFeatured = 'featured' in game && game.featured;
 
@@ -253,12 +178,13 @@ function PopularGameCard({ game }: { game: PopularGame }) {
 }
 
 export default function PopularGamingAccounts() {
+  const { popularGamingAccountsSection } = siteContent;
   return (
     <>
       <section data-popular-gaming-section style={sectionStyle}>
         <div data-popular-gaming-inner style={innerStyle}>
           <div style={headerStyle}>
-            <h3 data-popular-gaming-title style={titleStyle}>Popular Gaming <span style={{ color: '#a023ec' }}>Accounts</span></h3>
+            <h3 data-popular-gaming-title style={titleStyle}>{popularGamingAccountsSection.title} <span style={{ color: '#a023ec' }}>{popularGamingAccountsSection.accentTitle}</span></h3>
             <div data-popular-gaming-controls style={controlsStyle}>
               <button data-popular-gaming-control type="button" aria-label="Previous popular game" style={getControlButtonStyle(false)}>&lsaquo;</button>
               <button data-popular-gaming-control type="button" aria-label="Next popular game" style={getControlButtonStyle(true)}>&rsaquo;</button>
@@ -270,7 +196,6 @@ export default function PopularGamingAccounts() {
           </div>
         </div>
       </section>
-      <style>{responsiveStyles}</style>
     </>
   );
 }

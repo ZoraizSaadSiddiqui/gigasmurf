@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react';
+import { siteContent } from '@/content/site-content';
 
 const sectionStyle: CSSProperties = {
   boxSizing: 'border-box',
@@ -143,6 +144,7 @@ function ArrowIcon({
 }
 
 export default function TopVerifiedSeller() {
+  const { topVerifiedSeller } = siteContent;
   return (
     <section
       className="d-flex flex-column align-items-center overflow-hidden"
@@ -160,14 +162,14 @@ export default function TopVerifiedSeller() {
           className="d-flex align-items-center justify-content-center"
           style={titleStyle}
         >
-          Top Verified{' '}
+          {topVerifiedSeller.title}{' '}
           <span
             style={{
               color: '#a023ec',
               marginLeft: '10px',
             }}
           >
-            Seller
+            {topVerifiedSeller.accentTitle}
           </span>
         </h2>
 
@@ -175,7 +177,7 @@ export default function TopVerifiedSeller() {
           className="d-flex align-items-center justify-content-center"
           style={descriptionStyle}
         >
-          Buy with confidence from our highest-rated community members.
+          {topVerifiedSeller.description}
         </p>
       </div>
 
@@ -188,8 +190,8 @@ export default function TopVerifiedSeller() {
 
           {/* Full Image */}
           <img
-            src="/Group 1171277187.png"
-            alt="Top verified seller profiles: BoostKing, MythicSeller, and LegendStore"
+            src={topVerifiedSeller.image}
+            alt={topVerifiedSeller.imageAlt}
             style={imageStyle}
           />
 

@@ -3,13 +3,13 @@
 import { siteContent } from '@/content/site-content';
 
 export default function Navbar() {
-  const { navigation } = siteContent;
+  const { brand, navigation } = siteContent;
 
   return (
     <nav className="navbar" style={{ backgroundColor: '#11072D' }}>
       <div className="container d-flex align-items-center justify-content-between">
         <a className="navbar-brand" href="#">
-          <img src="/logo.png" alt="Gigasmurf" style={{ width: '185.8px', height: '55.29px' }} />
+          <img src={brand.logo} alt={brand.name} style={{ width: '185.8px', height: '55.29px' }} />
         </a>
 
         <div className="d-flex align-items-center gap-4">

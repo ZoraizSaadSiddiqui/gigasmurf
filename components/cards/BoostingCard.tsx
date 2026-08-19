@@ -1,13 +1,8 @@
 import Image from 'next/image';
 import type { CSSProperties } from 'react';
+import { siteContent, type BoostingServiceData } from '@/content/site-content';
 
-export interface BoostingServiceData {
-  id: number;
-  name: string;
-  maxLevel: string;
-  startingPrice: string;
-  image: string;
-}
+export type { BoostingServiceData } from '@/content/site-content';
 
 export interface BoostingCardProps {
   svc: BoostingServiceData;
@@ -109,6 +104,7 @@ const ratingStyle: CSSProperties = {
 };
 
 export default function BoostingCard({ svc }: BoostingCardProps) {
+  const { seller } = siteContent;
   return (
     <article className="card h-100" style={cardStyle}>
       <div className="position-relative" style={imageContainerStyle}>
@@ -122,11 +118,11 @@ export default function BoostingCard({ svc }: BoostingCardProps) {
         </div>
         <div className="d-flex align-items-center justify-content-between" style={sellerStyle}>
           <div className="d-flex align-items-center" style={sellerDetailsStyle}>
-            <span className="position-relative" style={sellerAvatarStyle}><Image src="/boy.jpg" alt="AceTrader" fill sizes="24px" style={imageStyle} /></span>
-            <span>AceTrader</span>
+            <span className="position-relative" style={sellerAvatarStyle}><Image src={seller.avatar} alt={seller.name} fill sizes="24px" style={imageStyle} /></span>
+            <span>{seller.name}</span>
             <svg style={verifiedStyle} viewBox="0 0 12 12" aria-label="Verified seller"><path fill="currentColor" d="M6 0l1.3 1.2 1.8-.1.7 1.6 1.5 1-.5 1.7.5 1.7-1.5 1-.7 1.6-1.8-.1L6 12 4.7 10.8l-1.8.1-.7-1.6-1.5-1 .5-1.7-.5-1.7 1.5-1 .7-1.6 1.8.1L6 0z" /><path d="M3.55 6.12l1.53 1.52 3.36-3.35" fill="none" stroke="#11072d" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </div>
-          <span style={ratingStyle}><span style={{ color: '#a023ec' }}>&#9733;</span> 4.9</span>
+          <span style={ratingStyle}><span style={{ color: '#a023ec' }}>&#9733;</span> {seller.rating}</span>
         </div>
       </div>
     </article>

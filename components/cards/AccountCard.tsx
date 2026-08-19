@@ -1,12 +1,13 @@
 import Image from 'next/image';
 import type { CSSProperties } from 'react';
-import type { AccountData } from '@/content/site-content';
+import { siteContent, type AccountData } from '@/content/site-content';
 
 export type { AccountData } from '@/content/site-content';
 export interface AccountCardProps { acc: AccountData; }
 
 export default function AccountCard({ acc }: AccountCardProps) {
   const isGlowing = acc.id === 1;
+  const { seller } = siteContent;
   const cardStyle: CSSProperties = {
     boxSizing: 'border-box',
     width: '320px',
@@ -43,7 +44,7 @@ export default function AccountCard({ acc }: AccountCardProps) {
         </p>
         <div className="d-flex align-items-center justify-content-between">
           <div className="d-flex align-items-center gap-2" style={{ color: '#fff', fontFamily: "'Manrope', sans-serif", fontSize: '16px', fontWeight: 600, lineHeight: '20px' }}>
-            <span className="position-relative" style={{ width: '24px', height: '24px', overflow: 'hidden', border: '0.5px solid rgba(207, 194, 214, 0.2)', borderRadius: '50%', background: '#260b4a' }}><Image src="/boy.jpg" alt="AceTrader" fill sizes="24px" style={{ objectFit: 'cover', objectPosition: 'center' }} /></span>
+            <span className="position-relative" style={{ width: '24px', height: '24px', overflow: 'hidden', border: '0.5px solid rgba(207, 194, 214, 0.2)', borderRadius: '50%', background: '#260b4a' }}><Image src={seller.avatar} alt={seller.name} fill sizes="24px" style={{ objectFit: 'cover', objectPosition: 'center' }} /></span>
             <span>{acc.seller}</span>
             <svg style={{ width: '12px', height: '12px', flex: '0 0 12px', color: '#22c55e' }} viewBox="0 0 12 12" aria-label="Verified seller"><path fill="currentColor" d="M6 0l1.3 1.2 1.8-.1.7 1.6 1.5 1-.5 1.7.5 1.7-1.5 1-.7 1.6-1.8-.1L6 12 4.7 10.8l-1.8.1-.7-1.6-1.5-1 .5-1.7-.5-1.7 1.5-1 .7-1.6 1.8.1L6 0z" /><path d="M3.55 6.12l1.53 1.52 3.36-3.35" fill="none" stroke="#11072d" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </div>
